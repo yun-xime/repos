@@ -92,29 +92,113 @@
 //	{
 //		printf("你选择了杰尼龟\n");
 //	}
+//	else
+//	{
+//		printf("你选择独自旅行\n");
+//	}
 //	return 0;
 //}
+
+//奇数数学表达式为2k+1;下面演示如何判断一个数是否为奇数：
+//int main() {
+//	int a = 0;
+//	scanf("%d", &a);
+//	if (a % 2 == 1) {
+//		printf("%d 是奇数\n", a);
+//	}
+//	else {
+//		printf("%d 是偶数\n", a);
+//	}
+//	return 0;
+//}//if语句括号内是表达式，其值为1时执行该语句块，值为0时跳过该语句块。
 //
 //while循环语句
 //int main()
 //{
-//    int i = 1;
-//	char p[4]= "esp";
-//	while (i <10)
+//    int i = 0;
+//    while (i < 10)
+//    {        
+//        printf("%d ", i);
+//        i++;
+//    }
+//    printf("\n");
+//    return 0; 
+//}
+
+//int main() {
+//	int num = 0;
+//	while(num < 100) 
 //	{
-//		char result[4];
-//	   scanf("%s",&result);
-//		if (result != p)
+//		if(num % 2 == 0)
+//			printf("%d ", num);
+//		num++;
+//	}
+//	
+//   	int i = 1;
+//		while (i <= 100)
 //		{
-//			printf("输入错误，请重试\n");
-//			/*while (getchar() != '\n');*/
-//		}
-//		else if (result == p)
-//		{
-//		    i++;
-//			printf("level=%d\n", i);
-//			printf("level up\n");
-//			/*system("pause");*/
-//		}
+//			printf("%d ", i);
+//			i += 2;
+//	     }
+//}
+//两种写法都可以，而第二种则更巧妙且简洁。
+
+//int main()
+//{
+//	int day = 0;
+//	scanf("%d", &day);
+//	switch (day)
+//	{
+//	case 1:
+//		printf("星期一\n");
+//		break;
+//	case 2:
+//		printf("星期二\n");		
+//		break;
+//	case 3:
+//		printf("星期三\n");
+//		break;
+//	case 4:
+//		printf("星期四\n");
+//		break;
+//	case 5:
+//		printf("星期五\n");
+//		break;
+//	case 6:
+//		printf("星期六\n");
+//		break;
+//	case 7:
+//		printf("星期日\n");
+//		break;
+//	default:
+//		printf("输入错误\n");
+//		break;
 //	}
 //}
+
+//int main()
+//{
+//	int day = 0;
+//	scanf("%d", &day);
+//	switch (day)
+//	{
+//	case 1:
+//	case 2:
+//	case 3:
+//	case 4:
+//	case 5:
+//		printf("工作日\n");
+//		break;
+//	case 6:
+//	case 7:
+//		printf("周末\n");
+//		break;
+//	default:
+//		printf("输入错误\n");
+//		break;
+//	}
+//	return 0;
+//}
+//上面两个switch语句告诉我们：1.switch语句的执行顺序是从上到下，遇到第一个匹配项就执行该项，直到遇到break语句。
+//2.如果逻辑需要，可以不写break，使多个case语句执行同一块代码。
+//3.如果所有case都不能匹配，则执行default语句块。

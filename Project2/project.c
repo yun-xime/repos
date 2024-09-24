@@ -73,7 +73,7 @@
 //    return 0;
 //}
 
-//if选择语句
+//if分支语句
 //int main()
 //{
 //	int input = 0;
@@ -117,17 +117,21 @@
 //{
 //    int i = 0;
 //    while (i < 10)
-//    {        
+//    {        if (7 == i)
+//        {
+//            continue;
+//        }
 //        printf("%d ", i);
 //        i++;
 //        if (5 == i)
 //        {
 //            break;
 //        }
+//        
 //    }
-//    printf("\n");
 //    return 0; 
 //}
+//break终止当前循环，continue立即结束本次循环并重新开始循坏
 
 //int main() {
 //	int num = 0;
@@ -147,6 +151,7 @@
 //}
 //两种写法都可以，而第二种则更巧妙且简洁。
 
+//switch分支语句
 //int main()
 //{
 //	int day = 0;

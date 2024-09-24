@@ -7,7 +7,7 @@
 //局部变量和全局变量的名称相同时，局部变量会覆盖全局变量，但不建议这么做。
 
 #include <stdio.h> 
-//#include <string.h>
+#include <string.h>
 
 //int add(int a, int b)
 //{
@@ -145,6 +145,27 @@
 //    }
 //}
 //输出1 2 3 4 6 7 8 9 10 11，即跳过5。
+
+//int main()
+//{
+//	char password[20];
+//	printf("请输入密码：");
+//	scanf("%s", password);
+//	int abc = 0;
+//	while ((abc = getchar()) != '\n') {
+//	}//getchar()函数从标准输入（通常是键盘）读取一个字符，并将其存储在变量abc中，直到遇到换行符为止。该处的while循环用于清空输入缓冲区。
+//	printf("请确认密码(Y/N):>");
+//	int ret = getchar();
+//	if ('Y' == ret)
+//	{
+//		printf("Yes\n");
+//	}
+//	else
+//	{
+//		printf("No\n");
+//	}
+//	return 0;
+//}
 
 //int main() {
 //	int num = 0;

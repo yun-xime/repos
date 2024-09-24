@@ -7,7 +7,7 @@
 //局部变量和全局变量的名称相同时，局部变量会覆盖全局变量，但不建议这么做。
 
 #include <stdio.h> 
-#include <string.h>
+//#include <string.h>
 
 //int add(int a, int b)
 //{

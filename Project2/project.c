@@ -226,11 +226,6 @@
 //	{
 //		printf("No\n");
 //	}
-//	//putchar函数用于将一个字符输出到标准输出（通常是屏幕）。
-//	int ddd = 0;
-//	printf("请输入一个字符：");
-//	ddd = getchar();
-//	putchar(ddd);
 //	return 0;
 //}
 
@@ -253,3 +248,17 @@
 //}
 //两种写法都可以，而第二种则更巧妙且简洁。
 
+//int main()
+//{
+//	char ch = '\0';
+//	while ((ch = getchar()) != EOF)//在终端输入任意字符，按下Ctrl+Z结束输入，EOF表示文件结束符。
+//	{
+//		if (ch < '0' || ch>'9') //判断输入的字符是否为数字
+//		{
+//			continue;
+//
+//		}
+//		putchar(ch);
+//	}
+//	return 0;
+//}

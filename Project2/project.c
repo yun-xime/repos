@@ -146,6 +146,7 @@
 //}
 //输出1 2 3 4 6 7 8 9 10 11，即跳过5。
 
+//getchar函数和清空输入缓冲区
 //int main()
 //{
 //	char password[20];
@@ -153,7 +154,7 @@
 //	scanf("%s", password);
 //	int abc = 0;
 //	while ((abc = getchar()) != '\n') {
-//	}//getchar()函数从标准输入（通常是键盘）读取一个字符，并将其存储在变量abc中，直到遇到换行符为止。该处的while循环用于清空输入缓冲区。
+//	}//getchar()函数从标准输入（通常是键盘）读取“一个”字符，并将其存储在变量abc中，直到遇到换行符为止。该处的while循环用于清空输入缓冲区。
 //	printf("请确认密码(Y/N):>");
 //	int ret = getchar();
 //	if ('Y' == ret)
@@ -164,9 +165,15 @@
 //	{
 //		printf("No\n");
 //	}
+//	//putchar函数用于将一个字符输出到标准输出（通常是屏幕）。
+//	int ddd = 0;
+//	printf("请输入一个字符：");
+//	ddd = getchar();
+//	putchar(ddd);
 //	return 0;
 //}
 
+//打印奇偶数
 //int main() {
 //	int num = 0;
 //	while(num < 100) 

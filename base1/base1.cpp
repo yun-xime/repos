@@ -85,10 +85,10 @@ int main()
 {
 	int a = 10;
 	int b = 20;
-	int c=0;
-	c = a > b? a : b;//按a和b的顺序填表达式就行了
+	int c = 0;
+	c = a > b ? a : b;//按a和b的顺序填表达式就行了
 	printf("%d\n", c);
 	//逗号表达式，即将多个表达式用逗号隔开，特点是从左到右计算，并返回最后一个表达式的值。
-	int d = (c=a+b,b=c+a,b+c);
+	int d = (c = a + b, b = c + a, b + c);
 	printf("%d\n", d);
 }

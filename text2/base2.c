@@ -10,7 +10,7 @@
 //	printf("请输入要查找的值");
 //	int sz = sizeof(arr)/sizeof(arr[0]);//获取数组的元素个数
 //	int left = 0;//左边界
-//	int right = sz - 1;//右边界
+//	int right = sz - 1;//右边界;因为数组下标从0开始（而不是从1开始），所以右边界为sz-1
 //
 //	while (left <= right)
 //	{
@@ -80,3 +80,4 @@
 //
 //    return 0;
 //}
+

@@ -14,7 +14,8 @@ int main()
 	
 	while (left <= right)
 	{
-		int mid = (left + right) / 2;//计算中间位置;必须放在while函数内，因为每次迭代中left和right的值会变化，mid的值也需要随着实时更新
+		//int mid = (left + right) / 2;//计算中间位置;必须放在while函数内，因为每次迭代中left和right的值会变化，mid的值也需要随着实时更新
+		int mid = left + (right - left) / 2;//避免溢出
 		if (arr[mid] == i)
 		{
 			printf("找到了，下标为%d", mid);

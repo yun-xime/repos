@@ -305,3 +305,20 @@
 //	}
 //	return 0;
 //}
+
+//do-while循环语句 do{循环体}while(循环条件表达式),该语句至少执行一次循环体。
+//do-while可以用实现多次输入，如：
+//int main()
+//{
+//	int num = 0;
+//	char choise = 'y';
+//	do
+//	{
+//		printf("请输入一个数字：");
+//		scanf("%d", &num);
+//		printf("你输入的数字是：%d\n", num);
+//		printf("是否继续输入(Y/N)：");
+//		scanf(" %c", &choise);
+//	} while (choise == 'Y' || choise == 'y');
+//	return 0;
+//}

@@ -15,6 +15,7 @@
 //    return 0;
 //}
 
+
 //读输入
 //给你一个3字符的字符串S，它是由[1,9]内的整数a，b及字符x按照axb顺序排列得到的。请你计算a和b的乘积。
 // int main()
@@ -24,6 +25,7 @@
 //    printf("%d\n", a * b);
 //    return 0;
 //}
+
 
 //计算n的阶乘：1 * 2 * 3 * 4 *... * n = n!
 //int main()
@@ -41,22 +43,22 @@
 //}
 //运算过程：1.ret 与 i 相乘得1*1=1，并赋值给 ret存储起来，i++；2.ret 与 i 相乘得1*2=2，，i++；3.ret 与 i 相乘得1*2*3=6，i++；...；最后得到n的阶乘。
 //递归算法可以更简洁地处理这个过程。
-int Fact(int n)
-{
-	int ret = n;
-	if (n > 1)
-	{
-		ret*=Fact(n - 1);
-	}
-	return ret;
-}//递归函数不能定义为内联函数。复杂函数：如果函数里有很多复杂的代码和逻辑，定义成内联函数会导致代码变得很长，增加可执行文件的大小，并且可能降低执行效率。 递归函数：递归函数是自己调用自己，定义成内联函数会导致无限展开，编译器无法正确处理。
-int main()
-{
-	int n = 0;
-	scanf("%d", &n);
-	printf("%d\n", Fact(n));
-	return 0;
-}
+//int Fact(int n)
+//{
+//	int ret = n;
+//	if (n > 1)
+//	{
+//		ret*=Fact(n - 1);
+//	}
+//	return ret;
+//}//递归函数不能定义为内联函数。复杂函数：如果函数里有很多复杂的代码和逻辑，定义成内联函数会导致代码变得很长，增加可执行文件的大小，并且可能降低执行效率。 递归函数：递归函数是自己调用自己，定义成内联函数会导致无限展开，编译器无法正确处理。
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	printf("%d\n", Fact(n));
+//	return 0;
+//}
 
 // //计算1！+ 2！+ 3！+ ... + 10!
 //int main()
@@ -77,6 +79,73 @@ int main()
 //	return 0;
 //}
 
+//计算1！+ 2！+ 3！+ ... + n!
+//long long Fact(int n)
+//{
+//	if (n == 0)
+//	{
+//		return 1;
+//	}
+//	long long ret = n;
+//	if (n > 1)
+//	{
+//		ret *= Fact(n - 1);
+//	}
+//	return ret;
+//}
+//int main()
+//{
+//	int n = 0;
+//	int i = 0;
+//	long long ret = 0;
+//	printf("请输入一个整数n：");
+//	scanf("%d", &n);
+//	if (n < 0)
+//	{
+//		printf("输入的整数不能为负数！\n");
+//		return 0;
+//	}
+//	for ( i = 1; i <= n; i++)
+//	{
+//		ret += Fact(i);
+//	}
+//	printf("%lld\n", ret);
+//	return 0;
+//}
+
+//也可以嵌套递归函数：
+//long long Fact(int n)
+//{
+//	if (n == 0)
+//	{
+//		return 1;
+//	}
+//	return n * Fact(n - 1);
+//}
+//long long SumFact(int n)
+//{
+//	if (n == 0)
+//	{
+//		return 0;
+//	}
+//	return SumFact(n - 1) + Fact(n);
+//}
+//int main()
+//{
+//	int n = 0;
+//	int i = 0;
+//	long long ret = 0;
+//	printf("请输入一个整数\n：");
+//	scanf("%d", &n);
+//	if (n < 0)
+//	{
+//		printf("输入的整数不能为负数！\n");
+//		return 0;
+//	}
+//	long long result = SumFact(n);//把SumFact函数的返回值放到result存储起来
+//	printf("%lld\n", result);
+//	return 0;
+//}
 
 //循环
 //地震的震级是地震释放的能量的对数比。已知每次震级增加1，能量就会增加大约32倍。在这里，我们假设每次震级增加1时，能量会准确地增加32倍。在这种情况下，震级为A的地震的能量是震级为B的地震的多少倍？

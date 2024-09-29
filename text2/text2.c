@@ -82,7 +82,7 @@
 //}
 
 // 打印字符串的逆序
-//#include <string.h>//for strlen()
+#include <string.h>//for strlen()
 //#include <stdlib.h>//for system()
 //#include <windows.h>//for Sleep()and strcmp()
 //int main()
@@ -130,3 +130,21 @@
 //	}
 //return 0;	
 //}
+
+//统计字符串中小写字母的个数
+//int main()
+//{
+//    int count = 0;
+//    char text[] = "Scan the QR code to sign in now";
+//    int length = strlen(text);
+//    for (int i = 0; i < length; i++)
+//    {
+//        if (text[i] >= 'a' && text[i] <= 'z')
+//        {
+//            count++;
+//        }
+//    }
+//    printf("%d\n", count);
+//    return 0;
+//}
+

@@ -1,3 +1,4 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 //typedef unsigned int uint;//typedef用法为：typedef 原名 新名，在这里，typedef unsigned int uint表示将unsigned int类型重新命名为uint。
 //typedef struct node {
@@ -92,3 +93,19 @@
 //	return 0;
 //}
 //因此可见第一种写代码习惯更好；当然要不要把常量放在左边，得看右边不是变量
+
+//int main()
+//{
+//	int  m = 0, n = 0, r = 0;
+//	printf("请输入两个整数：");
+//	scanf("%d %d", &m, &n);
+//	r = m % n;
+//	while (r!= 0) 
+//	{
+//		m = n;
+//		n = r;
+//		r = m % n;
+//	}
+//	printf("最大公约数为：%d", n);
+//	return 0;
+//}

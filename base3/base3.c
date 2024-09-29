@@ -1,5 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
+#include <string.h>
 //typedef unsigned int uint;//typedef用法为：typedef 原名 新名，在这里，typedef unsigned int uint表示将unsigned int类型重新命名为uint。
 //typedef struct node {
 //	int data;
@@ -107,5 +108,76 @@
 //		r = m % n;
 //	}
 //	printf("最大公约数为：%d", n);
+//	return 0;
+//}
+
+//两个变量的值互换
+//int main()
+//{
+//	int A=10, B=5, C=0;
+//	C = A;
+//	A = B;
+//	B = C;
+//	printf("A=%d, B=%d", A, B);
+//	return 0;
+//}
+
+//将三个数由小到大排序
+//int main()
+//{
+//	int x = 10, y = 5, z = 16;
+//	if (x > y)
+//	{
+//		if (y > z)
+//		{
+//			printf("%d %d %d", x, y, z);
+//		}
+//		else
+//		{
+//			if (x > z)
+//			{
+//				printf("%d %d %d", x, z, y);
+//			}
+//			else
+//			{
+//				printf("%d %d %d", z, x, y);
+//			}
+//		}
+//	}
+//	else
+//	{
+//		if (x > z)
+//		{
+//			printf("%d %d %d", y, x, z);
+//		}
+//		else
+//		{
+//			if (y > z)
+//			{
+//				printf("%d %d %d", y, z, x);
+//			}
+//			else
+//			{
+//				printf("%d %d %d", z, y, x);
+//			}
+//		}
+//	}
+//	return 0;
+//}
+
+//找出数组中最大的数
+//int main()
+//{
+//	int arr[6] = { 19,23,3,15,8,15};
+//	int max = arr[0];
+//	int i = 0;
+//	for (i = 0; i < sizeof(arr) / sizeof(arr[0]); i++)//strlen 函数只能用来计算字符串的长度
+//	{
+//		if (arr[i] > max)
+//		{
+//			max = arr[i];
+//		}
+//	}
+//	printf("%d", max);
 //	return 0;
 //}

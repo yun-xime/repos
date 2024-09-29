@@ -81,3 +81,27 @@
 //    return 0;
 //}
 
+// 打印字符串的逆序
+//#include <string.h>//for strlen()
+//#include <stdlib.h>//for system()
+//#include <windows.h>//for Sleep()
+//int main()
+//{
+//	char arr1[12] = { "hello world" };
+//	char arr2[12] = { "           " };//初始化为空格，用于存储当前逆序字符串的部分内容
+//	int left = 0; //left指向字符串的开头（第一个字符）
+//	int right = strlen(arr1) - 1;//right指向字符串的结尾（最后一个字符）
+//
+//	while (left <= right)
+//	{
+//		arr2[left] = arr1[left];//将arr1的left位置的字符复制到arr2的对应位置
+//		arr2[right] = arr1[right];
+//		printf("%s\n", arr2);
+//		Sleep(1000);//暂停程序执行1000毫秒（1秒）。
+//		system("cls");//清屏
+//		left++;
+//		right--;//更新left和right，left指向下一个字符，right指向上一个字符
+//	}
+//	return 0;
+//}
+

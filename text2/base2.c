@@ -105,3 +105,28 @@
 //	return 0;
 //}
 
+//模拟用户登录
+//int main()
+//{
+//	int i = 0;
+//	char password[10];
+//	for (i = 1; i <= 3; i++)
+//	{
+//		printf("请输入密码：");
+//		scanf("%s", password);
+//		if (strcmp(password, "123456") == 0)//strcmp
+//		{
+//			printf("密码正确，欢迎进入系统！\n");
+//			break;
+//		}
+//		else
+//		{
+//			printf("密码错误，请重新输入！\n");
+//		}
+//	    if (3 == i)
+//	    {
+//		    printf("多次错误，请稍后重试！");
+//	    }
+//	}
+//return 0;	
+//}

@@ -84,7 +84,7 @@
 // ´òÓ¡×Ö·û´®µÄÄæÐò
 //#include <string.h>//for strlen()
 //#include <stdlib.h>//for system()
-//#include <windows.h>//for Sleep()
+//#include <windows.h>//for Sleep()and strcmp()
 //int main()
 //{
 //	char arr1[12] = { "hello world" };

@@ -230,3 +230,52 @@
 //
 //    return 0;
 //}
+
+#include <stdlib.h> //for RAND_MAX
+#include <time.h>//for time()
+void menu()
+{
+	printf("*********************************************************\n");
+	printf("*********************    1. p l a y    ******************\n");
+	printf("*********************    2. e x i t    ******************\n");
+	printf("*********************************************************\n");
+}
+
+void game()
+{
+	srand((unsigned int)time(NULL));//scrand()函数用来设置随机数种子;time(NULL)返回当前时间的秒数。使用 unsigned int 可以确保传递给 srand 的值是正整数，从而避免负数导致的潜在问题（虽然在大多数情况下，time(NULL) 返回的值是非负的）。
+	RAND_MAX;//最大值为32767
+	int ret = rand();//rand()函数用来生成一个随机整数。
+	printf("%d",ret);
+}
+
+int main()
+{
+	int choice = 0;
+	
+	do
+	{
+		menu();
+		printf("输入你的选择");
+		//scanf("%d", &choice);//在 scanf 函数读取用户输入时，如果输入的内容无法转换为整数，scanf 将不会修改 choice 的值，导致循环条件始终为真，从而造成死循环。
+		if (scanf("%d", &choice)!= 1)
+		{
+			while(getchar()!='\n')
+			printf("错误，请重新输入");
+			continue;
+		}
+		switch (choice)
+		{
+		case 1:
+			game();
+			break;
+		case 2:
+			printf("已退出");
+			break;
+		default:
+			printf("错误，请重新输入");
+			break;
+		}
+	} while (choice != 2);//当choice不等于2时执行循环
+    return 0;
+}

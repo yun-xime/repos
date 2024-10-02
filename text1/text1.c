@@ -244,10 +244,30 @@ void menu()
 void game()
 {
 	RAND_MAX;//最大值为32767
-	int ret = rand();//rand()函数用来生成一个随机整数。
-	printf("%d",ret);
+	int ret = rand()%100+1;//rand()函数用来生成一个随机整数。rand() % 100 的作用是将 rand() 生成的随机数对100取余。取余操作会返回一个范围在 0 到 9100之间的整数。这是因为 a % b 会返回 a 除以 b 的余数，而余数总是小于 b
+	/*printf("%d",ret);*/
+	int guess = 0;
+	
+	while(1)
+	{
+		printf("猜数字：>");
+		scanf("%d", &guess);
+		if(guess < ret)
+	    {
+		   printf("猜小了\n");
+	    }
+	    else if (guess > ret)
+	    {
+		   printf("猜大了\n");
+	    }
+		else
+		{
+			printf("恭喜你，猜对了\n");
+			break;
+		}
+	} 
 }
-
+//int *P =NULL;//定义了一个指针变量P，初始值为NULL，表示一个空指针。
 int main()
 {
 	int choice = 0;

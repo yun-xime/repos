@@ -252,6 +252,7 @@ int main()
 {
 	int choice = 0;
 	srand((unsigned int)time(NULL));//scrand()函数用来设置随机数种子;time(NULL)返回当前时间的秒数。使用 unsigned int 可以确保传递给 srand 的值是正整数，从而避免负数导致的潜在问题（虽然在大多数情况下，time(NULL) 返回的值是非负的）。
+	//scand只需要设置一次种子，后续调用rand()函数时，会根据之前设置的种子产生随机数，因此把srand函数放在main函数的开头是比较合适的。
 	do
 	{
 		menu();

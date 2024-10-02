@@ -231,71 +231,71 @@
 //    return 0;
 //}
 
-#include <stdlib.h> //for RAND_MAX
-#include <time.h>//for time()
-void menu()
-{
-	printf("*********************************************************\n");
-	printf("*********************    1. p l a y    ******************\n");
-	printf("*********************    2. e x i t    ******************\n");
-	printf("*********************************************************\n");
-}
-
-void game()
-{
-	RAND_MAX;//最大值为32767
-	int ret = rand()%100+1;//rand()函数用来生成一个随机整数。rand() % 100 的作用是将 rand() 生成的随机数对100取余。取余操作会返回一个范围在 0 到 9100之间的整数。这是因为 a % b 会返回 a 除以 b 的余数，而余数总是小于 b
-	/*printf("%d",ret);*/
-	int guess = 0;
-	
-	while(1)
-	{
-		printf("猜数字：>");
-		scanf("%d", &guess);
-		if(guess < ret)
-	    {
-		   printf("猜小了\n");
-	    }
-	    else if (guess > ret)
-	    {
-		   printf("猜大了\n");
-	    }
-		else
-		{
-			printf("恭喜你，猜对了\n");
-			break;
-		}
-	} 
-}
-//int *P =NULL;//定义了一个指针变量P，初始值为NULL，表示一个空指针。
-int main()
-{
-	int choice = 0;
-	srand((unsigned int)time(NULL));//scrand()函数用来设置随机数种子;time(NULL)返回当前时间的秒数。使用 unsigned int 可以确保传递给 srand 的值是正整数，从而避免负数导致的潜在问题（虽然在大多数情况下，time(NULL) 返回的值是非负的）。
-	//scand只需要设置一次种子，后续调用rand()函数时，会根据之前设置的种子产生随机数，因此把srand函数放在main函数的开头是比较合适的。
-	do
-	{
-		menu();
-		printf("输入你的选择");
-		//scanf("%d", &choice);//在 scanf 函数读取用户输入时，如果输入的内容无法转换为整数，scanf 将不会修改 choice 的值，导致循环条件始终为真，从而造成死循环。
-		if (scanf("%d", &choice)!= 1)
-		{
-			while(getchar()!='\n')
-			printf("错误，请重新输入");
-			continue;
-		}
-		switch (choice)
-		{
-		case 1:
-			game();
-			break;
-		case 2:
-			printf("已退出");
-			break;
-		default:
-			printf("错误，请重新输入");
-			break;
-		}
-	} while (choice != 2);//当choice不等于2时执行循环
-    return 0;
-}
+//#include <stdlib.h> //for RAND_MAX
+//#include <time.h>//for time()
+//void menu()
+//{
+//	printf("*********************************************************\n");
+//	printf("*********************    1. p l a y    ******************\n");
+//	printf("*********************    2. e x i t    ******************\n");
+//	printf("*********************************************************\n");
+//}
+//
+//void game()
+//{
+//	RAND_MAX;//最大值为32767
+//	int ret = rand()%100+1;//rand()函数用来生成一个随机整数。rand() % 100 的作用是将 rand() 生成的随机数对100取余。取余操作会返回一个范围在 0 到 9100之间的整数。这是因为 a % b 会返回 a 除以 b 的余数，而余数总是小于 b
+//	/*printf("%d",ret);*/
+//	int guess = 0;
+//	
+//	while(1)
+//	{
+//		printf("猜数字：>");
+//		scanf("%d", &guess);
+//		if(guess < ret)
+//	    {
+//		   printf("猜小了\n");
+//	    }
+//	    else if (guess > ret)
+//	    {
+//		   printf("猜大了\n");
+//	    }
+//		else
+//		{
+//			printf("恭喜你，猜对了\n");
+//			break;
+//		}
+//	} 
+//}
+////int *P =NULL;//定义了一个指针变量P，初始值为NULL，表示一个空指针。
+//int main()
+//{
+//	int choice = 0;
+//	srand((unsigned int)time(NULL));//scrand()函数用来设置随机数种子;time(NULL)返回当前时间的秒数。使用 unsigned int 可以确保传递给 srand 的值是正整数，从而避免负数导致的潜在问题（虽然在大多数情况下，time(NULL) 返回的值是非负的）。
+//	//scand只需要设置一次种子，后续调用rand()函数时，会根据之前设置的种子产生随机数，因此把srand函数放在main函数的开头是比较合适的。
+//	do
+//	{
+//		menu();
+//		printf("输入你的选择");
+//		//scanf("%d", &choice);//在 scanf 函数读取用户输入时，如果输入的内容无法转换为整数，scanf 将不会修改 choice 的值，导致循环条件始终为真，从而造成死循环。
+//		if (scanf("%d", &choice)!= 1)
+//		{
+//			while(getchar()!='\n')
+//			printf("错误，请重新输入");
+//			continue;
+//		}
+//		switch (choice)
+//		{
+//		case 1:
+//			game();
+//			break;
+//		case 2:
+//			printf("已退出");
+//			break;
+//		default:
+//			printf("错误，请重新输入");
+//			break;
+//		}
+//	} while (choice != 2);//当choice不等于2时执行循环
+//    return 0;
+//}

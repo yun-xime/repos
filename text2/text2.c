@@ -114,7 +114,7 @@
 //	{
 //		printf("请输入密码：");
 //		scanf("%s", password);
-//		if (strcmp(password, "123456") == 0)//strcmp
+//		if (strcmp(password, "123456") == 0)//strcmp()函数用于比较两个字符串是否相等,返回0表示相等
 //		{
 //			printf("密码正确，欢迎进入系统！\n");
 //			break;

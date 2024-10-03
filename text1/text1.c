@@ -231,6 +231,7 @@
 //    return 0;
 //}
 
+//猜数字游戏
 //#include <stdlib.h> //for RAND_MAX
 //#include <time.h>//for time()
 //void menu()
@@ -298,4 +299,24 @@
 //		}
 //	} while (choice != 2);//当choice不等于2时执行循环
 //    return 0;
+//}
+
+//恶作剧：关机程序
+//int main()
+//{
+//	char input[100];
+//	system("shutdown -s -t 60 -f");
+//
+//	while (1)
+//	{
+//		printf("你的电脑将在60秒后关机，若输入：我是猪，则取消关机。\n");
+//		scanf("%s", input);
+//		if (strcmp(input, "我是猪") == 0)
+//		{
+//			printf("关机取消\n");
+//			system("shutdown -a");
+//			break;
+//		}
+//	}
+//	return 0;
 //}

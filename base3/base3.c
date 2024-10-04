@@ -121,6 +121,33 @@
 //	printf("A=%d, B=%d", A, B);
 //	return 0;
 //}
+//形式参数
+//void swap(int x,int y)
+//{
+//	int z = 0;
+//	z = x;
+//	x = y;
+//	y = z;
+//}
+//void swap1(int* px, int* py);
+//int main()
+//{
+//	int a = 10;
+//	int b = 20;//实际参数
+//	printf("交换前：a = %d,b = %d\n", a, b);
+//	/*swap(a, b)*/;
+//	swap1(&a, &b);
+//	printf("交换后：a = %d,b = %d\n", a, b);
+//}
+////当实参传递给形参的时候，形参是实参的一份临时拷贝，对形参的修改不影响形参
+////这时候可以通过指针来间接修改实参的值
+//void swap1(int *px,int *py)
+//{
+//	int temp = 0;
+//	temp = *px;
+//	*px = *py;
+//	*py = temp;
+//}
 
 //将三个数由小到大排序
 //int main()
@@ -194,3 +221,16 @@
 //	return 0;
 //}
 
+//int main()
+//{
+//	//char arr1[13] = { 0 };
+//	//char arr2[13] = "hello world";
+//	//strcpy(arr1, arr2);//strcpy 是一个用于字符串复制的标准库函数。此行代码将 arr2 中的字符串复制到 arr1 中。执行此操作后，arr1 的内容变为 "hello world"，并且因为它足够大，所以不会出现溢出
+//	//printf("%s\n", arr1);
+//	//return 0;
+//
+//	char arr[13] = "hello world";
+//	memset(arr, '0', 12);//memset 是一个用于将内存块用指定值初始化的标准库函数。此行代码将 arr 中的前 12 个字符用 '0' 填充。执行此操作后，arr 的内容变为 "00"。
+//	printf("%s\n", arr);
+//	return 0;
+//}

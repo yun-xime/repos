@@ -218,38 +218,38 @@
 约束条件：2 < N < 100,1 < Ai < 1000；
 输入：第一行输入N，第二行输入A1 A2 ... AN;
 输出：输出答案。*/
-void o_O(int A[],int N)//冒泡排序
-{
-	for (int i = 0; i < N - 1; i++)
-	{
-		for (int j = 0; j < N - 1 - i;j++)//j < N - 1 - i作用是让相邻两个数进行比较
-		{
-			int temp;
-			if (A[j] > A[j + 1])
-			{
-				temp = A[j];
-				A[j] = A[j + 1];
-				A[j + 1] = temp;
-			}
-		}
-	}
-}
-int main()
-{
-	int N;
-	int A[1000];
-	scanf("%d", &N);
-	for (int i = 0; i < N; i++)
-	{
-		scanf("%d", &A[i]);
-	}
-	o_O(A, N);
-	for (int i = 0; i < N - 1; i++)
-	{
-		if (A[i + 1] - A[i] == 2)
-		{
-			printf("%d", A[i] + 1);
-		}
-	}
-	return 0;
-}
+//void o_O(int A[],int N)//冒泡排序
+//{
+//	for (int i = 0; i < N - 1; i++)
+//	{
+//		for (int j = 0; j < N - 1 - i;j++)//j < N - 1 - i作用是让相邻两个数进行比较
+//		{
+//			int temp;
+//			if (A[j] > A[j + 1])
+//			{
+//				temp = A[j];
+//				A[j] = A[j + 1];
+//				A[j + 1] = temp;
+//			}
+//		}
+//	}
+//}
+//int main()
+//{
+//	int N;
+//	int A[1000];
+//	scanf("%d", &N);
+//	for (int i = 0; i < N; i++)
+//	{
+//		scanf("%d", &A[i]);
+//	}
+//	o_O(A, N);
+//	for (int i = 0; i < N - 1; i++)
+//	{
+//		if (A[i + 1] - A[i] == 2)
+//		{
+//			printf("%d", A[i] + 1);
+//		}
+//	}
+//	return 0;
+//}

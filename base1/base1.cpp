@@ -116,8 +116,14 @@ a > b ? a : (c > d ? c : d);
 
 //链式访问：把一个函数的返回值作为另一个函数的参数。
 #include <string.h>
+//int OvO(int a,int b)
+//{
+//	return a + b;
+//}
 //int main()
 //{
-//	printf("%zu", strlen("abs"));//打印无符号整型
+//	int a = 1, b = 2;
+//    printf("%d\n",OvO(a,b));
+//	printf("%zu\n", strlen("abs"));//打印无符号整型
 //	return 0;
 //}

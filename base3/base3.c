@@ -234,3 +234,31 @@
 //	printf("%s\n", arr);
 //	return 0;
 //}
+
+//不使用临时变量，计算字符长度。解释：
+//int my_strlen(char *str)//用指针接收地址；也可以写出数组的形式，如str[]。
+//{
+//	int count = 0;//为了实现某个功能（比如这里的计数）而创建，用完就销毁的变量（局部变量），称为临时变量
+//	while (*str != '\0')
+//	{
+//		count++;
+//		str++;//直接使用++找下一个字符。注意，是str而不是*str。
+//	}
+//	return count;
+//}
+//实现：
+int my_strlen(char *str)
+{
+	if (*str != '\0')
+	{
+		return 1 + my_strlen(str + 1);//参数里不能写str++。使用str + 1是正确的做法，因为它只是计算出下一个字符的地址，而不改变str指针本身。这样，str在每次递归调用中仍然指向原始字符串的起始地址。
+	}
+	else
+		return 0;
+}
+int main()
+{
+	char arr[4] = "abc";
+	printf("%d\n", my_strlen(arr));//字符串和数组的元素都是连续存放的，因此它们传参都是传首元素的地址，通过这个地址就可以访问到首元素及其后面的各个元素。
+	return 0;
+}

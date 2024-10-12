@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{6b5913c1-c753-4af4-a845-9d9bbf6fa95d}</ProjectGuid>
-    <RootNamespace>base2</RootNamespace>
+    <ProjectGuid>{5bf66d5c-6642-484d-ac04-41bd1394002a}</ProjectGuid>
+    <RootNamespace>TestField</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,8 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="add.c" />
-    <ClCompile Include="base2.c" />
+    <ClCompile Include="TF1.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

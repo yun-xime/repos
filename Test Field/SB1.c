@@ -135,27 +135,6 @@
 //	return 0;
 //}
 
-//模拟登录系统
-//int main()
-//{
-//	char password[20];
-//	printf("请输入密码：");
-//	scanf("%s", password);
-//	int abc = 0;
-//	while ((abc = getchar()) != '\n');//getchar()函数从标准输入（通常是键盘）逐个读取字符，并将其存储在变量abc中，直到遇到换行符为止。该处的while循环用于清空输入缓冲区。
-//	printf("请确认密码(Y/N):>");
-//	int ret = getchar();
-//	if ('Y' == ret)
-//	{
-//		printf("Yes\n");
-//	}
-//	else
-//	{
-//		printf("No\n");
-//	}
-//	return 0;
-//}
-
 //指针的简单使用
 //int main() {
 //	int a = 10;
@@ -181,6 +160,11 @@
 //因此可见第一种写代码习惯更好；当然要不要把常量放在左边，得看右边不是变量
 
 //求最大公约数
+//int gcd(int m, int n)
+//{
+//    return n > 0? gcd(n, m % n) : m;//递归 + 三目运算符
+//}
+//
 //int main()
 //{
 //	int  m = 0, n = 0, r = 0;
@@ -194,6 +178,8 @@
 //		r = m % n;
 //	}
 //	printf("最大公约数为：%d", n);
+// 
+// 	printf("最大公约数为：%d", gcd(m, n));
 //	return 0;
 //}
 
@@ -231,12 +217,79 @@
 //{
 //	//char arr1[13] = { 0 };
 //	//char arr2[13] = "hello world";
-//	//strcpy(arr1, arr2);//strcpy 是一个用于字符串复制的标准库函数。此行代码将 arr2 中的字符串复制到 arr1 中。执行此操作后，arr1 的内容变为 "hello world"，并且因为它足够大，所以不会出现溢出
+//	//strcpy(arr1, arr2);
 //	//printf("%s\n", arr1);
 //	//return 0;
 //
 //	char arr[13] = "hello world";
-//	memset(arr, '0', 12);//memset 是一个用于将内存块用指定值初始化的标准库函数。此行代码将 arr 中的前 12 个字符用 '0' 填充。执行此操作后，arr 的内容变为 "00"。
+//	memset(arr, '0', 12);
 //	printf("%s\n", arr);
+//	return 0;
+//}
+//strcpy 是一个用于字符串复制的标准库函数。此行代码将 arr2 中的字符串复制到 arr1 中。执行此操作后，arr1 的内容变为 "hello world"，并且因为它足够大，所以不会出现溢出
+//memset 是一个用于将内存块用指定值初始化的标准库函数。此行代码将 arr 中的前 12 个字符用 '0' 填充。执行此操作后，arr 的内容变为 "00"。
+
+//九九乘法表
+//int main()
+//{
+//    int i, j;
+//    for (i = 1; i <= 9; i++)
+//    {
+//        for (j = 1; j <= i; j++)
+//        {
+//            printf("%dx%d=%2d\t", j, i, i * j);
+//        }
+//        printf("\n");
+//    }
+//    return 0;
+//}
+
+//计算n的阶乘：1 * 2 * 3 * 4 *... * n = n!
+//int main()
+//{
+//	int i = 1;
+//	int n = 0;
+//	int ret = 1;
+//	scanf("%d", &n);
+//	for (i = 1; i <= n; i++)
+//	{
+//		ret *= i;//与ret = ret * i 等价；把每次执行得到的i的值放到ret变量中，并累乘起来。
+//	}
+//	printf("%d\n", ret);
+//	return 0;
+//}
+//运算过程：1.ret 与 i 相乘得1*1=1，并赋值给 ret存储起来，i++；2.ret 与 i 相乘得1*2=2，，i++；3.ret 与 i 相乘得1*2*3=6，i++；...；最后得到n的阶乘。
+
+//计算1！+ 2！+ 3！+ ... + n!
+//long long Fact(int n)
+//{
+//	if (n == 0)
+//	{
+//		return 1;
+//	}
+//	long long ret = n;
+//	if (n > 1)
+//	{
+//		ret *= Fact(n - 1);
+//	}
+//	return ret;
+//}
+//int main()
+//{
+//	int n = 0;
+//	int i = 0;
+//	long long ret = 0;
+//	printf("请输入一个整数n：");
+//	scanf("%d", &n);
+//	if (n < 0)
+//	{
+//		printf("输入的整数不能为负数！\n");
+//		return 0;
+//	}
+//	for ( i = 1; i <= n; i++)
+//	{
+//		ret += Fact(i);
+//	}
+//	printf("%lld\n", ret);
 //	return 0;
 //}

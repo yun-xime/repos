@@ -128,7 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="game1.c" />
-    <ClCompile Include="logic text.c" />
+    <ClCompile Include="logic test.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game1.h" />

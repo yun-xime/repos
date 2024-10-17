@@ -18,12 +18,12 @@
     <ClCompile Include="logic test.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="game1.c">
+    <ClCompile Include="tic-tac-toe.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="game1.h">
+    <ClInclude Include="tic-tac-toe.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

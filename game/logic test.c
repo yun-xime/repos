@@ -1,5 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS
-#include "game1.h"
+#include "tic-tac-toe.h"
 
 void menu()
 {

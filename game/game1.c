@@ -131,11 +131,13 @@ char CheckWin(char board[ROW][COL], int row, int col,char N)
 			if (i == j && board[i][j] == N)
 			{
 				R++;
+				if (R == row)
+				{
+					return board[i][j];
+				}
+				break;
 			}
-			if (R == row)
-			{
-				return board[i][j];
-			}
+
 		}
 	
 	}
@@ -147,10 +149,11 @@ char CheckWin(char board[ROW][COL], int row, int col,char N)
 			if (i == j && board[i][j] == N)
 			{
 				R++;
-			}
-			if (R == row)
-			{
-				return board[i][j];
+				if (R == row)
+				{
+					return board[i][j];
+				}
+				break;
 			}
 		}
 		

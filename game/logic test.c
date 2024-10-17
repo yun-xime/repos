@@ -11,13 +11,43 @@ void menu()
 
 void game()
 {
+	char ret = 0;
+	char N;
 	char board[ROW][COL] = { 0 };
 	InitBoard(board, ROW, COL);
 	DisplayBoard(board, ROW, COL);
+	while (1)
+	{
+		N = PlayerMove(board, ROW, COL);
+		ret = CheckWin(board, ROW, COL,N);
+		if (ret != 'C')
+		{
+			break;
+		}
+		N = ComputerMove(board, ROW, COL);
+		ret = CheckWin(board, ROW, COL, N);
+		if (ret != 'C')
+		{
+			break;
+		}
+	}
+	if (ret == 'X')
+	{
+		printf("Congratulations! You win!\n");
+	}
+	else if (ret == 'O')
+	{
+		printf("Sorry, you lose.\n");
+	}
+	else if (ret == 'T')
+	{
+		printf("It's a tie.\n");
+	}
 }
 
 int main()
 {
+	srand((unsigned int)time(NULL));//Seed the random number generator.seed,种子；generator，生成器。
 	int input;
 	do
 	{

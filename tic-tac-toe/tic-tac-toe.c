@@ -72,7 +72,7 @@ char ComputerMove(char board[ROW][COL], int row, int col)
 	int x = 0, y = 0;
 	while (1)
 	{
-		x = rand() % row;
+		x = rand() % row;//生成0到row - 1的随机数
 		y = rand() % col;
 		if (board[x][y] == ' ')
 		{

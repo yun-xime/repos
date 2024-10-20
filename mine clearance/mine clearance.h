@@ -17,4 +17,4 @@ void DisplayBoard(char show[ROWS][COLS], int row, int col);
 
 void SetMines(char mine[ROWS][COLS], int row, int col);
 
-void FindMines(char mine[ROWS][COLS],char show[ROWS][COLS], int row, int col);
+void FindMines(char mine[ROWS][COLS], char show[ROWS][COLS], int row, int col);

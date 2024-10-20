@@ -15,10 +15,9 @@ void game()
 	//mine array will be initialized with ' '
 	//show array will be initialized with '*'
 	//use '!' to represent the mines
-	InitBoard(mine, ROWS, COLS,'0');
+	InitBoard(mine, ROWS, COLS,' ');
 	InitBoard(show, ROWS, COLS,'*');
 
-	//DisplayBoard(mine, ROW, COL);
 	//set the mines
 	SetMines(mine, ROW, COL);
 	DisplayBoard(show, ROW, COL);
@@ -49,10 +48,6 @@ int main()
 		case 0:
 			printf("You have chosen to exit\n");
 			return 0;
-		default:
-			printf("Invalid choice\n");
-			break;
 		}
 	}while (choice!= 0);
-	return 0;
 }

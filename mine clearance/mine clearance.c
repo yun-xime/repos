@@ -15,7 +15,7 @@ void game()
 	//mine array will be initialized with ' '
 	//show array will be initialized with '*'
 	//use '!' to represent the mines
-	InitBoard(mine, ROWS, COLS,'0');
+	InitBoard(mine, ROWS, COLS,' ');
 	InitBoard(show, ROWS, COLS,'*');
 
 	//DisplayBoard(mine, ROW, COL);

@@ -49,6 +49,9 @@ int main()
 		case 0:
 			printf("You have chosen to exit\n");
 			return 0;
+		default:
+			printf("Invalid choice\n");
+			break;
 		}
 	}while (choice!= 0);
 	return 0;

@@ -244,6 +244,20 @@
 //    return 0;
 //}
 
+//计算数列1+2+3+...+n
+//int main()
+//{
+//	int n;
+//	scanf("%d", &n);
+//	int num = 0;
+//	for (int i = 1; i <= n; i++)
+//	{
+//		num += i;
+//	}
+//	printf("%d", num);
+//	return 0;
+//}
+
 //计算n的阶乘：1 * 2 * 3 * 4 *... * n = n!
 //int main()
 //{

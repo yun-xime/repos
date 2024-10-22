@@ -1,5 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
+#include <math.h>
 /*斯拉维克正在为朋友的生日准备一个礼物。他有一个由n个数字组成的数组a，这个礼物将是所有这些数字的乘积。因为斯拉维克是一个想要做出最大乘积的好孩子，他想在他的一个数字上加1。斯拉维克能够做到的最大乘积是多少？
 输入：每个测试用例的第一行包含一个整数t（1 <= t <= 10^4) - 测试用例的数量；每个测试用例的第一行包含一个整数n（1 <= n <= 9) 数字的数量；每个测试用例的第二行包含n个以空格分隔的的整数ai（0 <= ai <= 9) - 数组中的数字
 输出：对于每个测试用例，输出一个整数 - 斯拉维克可以通过在一个数字上加1来获得的最大乘积*/
@@ -178,30 +179,49 @@
 //	return 0;
 //}
 
-void o_O(int A[], int N)
-{
-	for (int i = 0; i < N - 1; i++)
-	{
-		for (int j = 0; j < N - 1 - i; j++)
-		{
-			int temp;
-			if (A[j] > A[j + 1])
-			{
-				temp = A[j];
-				A[j] = A[j + 1];
-				A[j + 1] = temp;
-			}
-		}
-	}
-}
-int main()
-{
-	int A[3];
-	for (int i = 0; i < 3; i++)
-	{
-		scanf("%d", &A[i]);
-	}
-	o_O(A, 3);
-	printf("%d %d %d", A[0], A[1], A[2]);
-	return 0;
-}
+//
+//int is_prime(int n)
+//{
+//	int j = 0;
+//	for (j = 2; j <= sqrt(n); j++)
+//	{
+//		if (0 == n % j)
+//		{
+//			return 0;
+//		}
+//	}
+//	return 1;
+//}
+//验证哥德巴赫猜想并输出n = j + h的组合中j最小的情况
+//int main()
+//{
+//	int N;
+//	scanf("%d", &N);
+//	for (int n = 4; n <= N; n++)
+//	{
+//		if (n % 2 == 0)
+//		{
+//	        for (int j = 2; j <= n / 2; j++)
+//	        {
+//				if (is_prime(j))
+//				{
+//					for (int h = n - j; h >= n / 2; h--)//h = n - j是为了过滤掉 j + h > n 的情况
+//					{
+//						if (is_prime(h) &&  j + h == n)
+//						{
+//							printf("%d=%d+%d\n", n, j, h);
+//							goto out;
+//						}
+//						else if (j + h < n)
+//						{
+//							break;
+//						}
+//					}
+//				}
+//	        }
+//		}
+//		out:
+//		continue;
+//	}
+//	return 0;
+//}

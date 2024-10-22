@@ -178,17 +178,30 @@
 //	return 0;
 //}
 
+void o_O(int A[], int N)
+{
+	for (int i = 0; i < N - 1; i++)
+	{
+		for (int j = 0; j < N - 1 - i; j++)
+		{
+			int temp;
+			if (A[j] > A[j + 1])
+			{
+				temp = A[j];
+				A[j] = A[j + 1];
+				A[j + 1] = temp;
+			}
+		}
+	}
+}
 int main()
 {
-	int n;
-	scanf("%d", &n);
-	if ((n % 2 == 0 && n % 100 != 0) || n % 400 == 0)
+	int A[3];
+	for (int i = 0; i < 3; i++)
 	{
-		printf("1");
+		scanf("%d", &A[i]);
 	}
-	else
-	{
-		printf("0");
-	}
+	o_O(A, 3);
+	printf("%d %d %d", A[0], A[1], A[2]);
 	return 0;
 }

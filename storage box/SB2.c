@@ -295,3 +295,39 @@
 //		}
 //	}
 //}
+
+//数字反转
+//输入一个不小于 100 且小于1000的浮点数，同时包括小数点后一位的一个浮点数，例如123.4 ，要求把这个数字翻转过来，变成浮点数4.321 并输出。
+//double reverse(double num)
+//{
+//	double N = 0, num_int = 0;
+//	for (int i = 1000; i > 1; i /= 10)
+//	{
+//
+//		if (i > 10)
+//		{
+//			int j = i / 10;
+//			num_int = (int)(num / j);
+//			N += num_int / i;
+//			num -= num_int * j;
+//		}
+//		else
+//		{
+//			num_int = (int)(num);
+//			N += num_int / i;
+//		}
+//	}
+//	return N;
+//}
+//
+//int main()
+//{
+//	double num = 0;
+//	scanf("%lf", &num);
+//	double num_int = (int)num;
+//	double num_dec = (num - num_int) * 10;
+//	double N = reverse(num);
+//	double new_num = num_dec + N;
+//	printf("%.3lf", new_num);
+//	return 0;
+//}

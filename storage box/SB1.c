@@ -328,3 +328,32 @@
 //	printf("a = %d, b = %d\n", a, b);
 //	return 0;
 //}
+
+//斐波那契数列的第N项
+#include <stdio.h>
+int main()
+{
+	int n;
+	scanf("%d", &n);
+	if (n == 0)
+	{
+		printf("0.00");
+	}
+	else if (n <= 2)
+	{
+		printf("1.00");
+	}
+	else
+	{
+		double a = 1, b = 1, c = 0;//即使是int 转换为double 之类也可能会发生精度丢失；尤其要避免不同类型的变量参与运算。
+		while (n > 2)
+		{
+			c = a + b;
+			a = b;
+			b = c;
+			n--;
+		}
+		printf("%.2f", c);
+	}
+	return 0;
+}

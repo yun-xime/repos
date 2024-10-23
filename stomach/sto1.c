@@ -225,3 +225,33 @@
 //	}
 //	return 0;
 //}
+
+//#include <stdio.h>
+//int main()
+//{
+//	int n;
+//	scanf("%d", &n);
+//	double a = 1, b = 1, c = 0;
+//	if (n == 0)
+//	{
+//		printf("0.00");
+//		return 0;
+//	}
+//	if (n == 1 || n == 2)
+//	{
+//		printf("1.00");
+//		return 0;
+//	}
+//	else if (n > 2)
+//	{
+//		for (int i = 3; i <= n; i++)
+//		{
+//			c = a + b;
+//			b = a;
+//			a = c;
+//		}
+//		printf("%.2lf", c);
+//	}
+//	return 0;
+//}
+

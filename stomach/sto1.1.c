@@ -140,3 +140,22 @@ X.........
 //    return 0;
 //}
 
+//计算某个整数的二进制位中1的个数。
+//int number_of_1(int m)
+//{
+//	int count = 0;
+//	while (m)
+//	{
+//		m = m & (m - 1);
+//		count++;
+//	}
+//	return count;
+//}
+//
+//int main()
+//{
+//	int m;
+//	scanf("%d", &m);
+//	printf("%d", number_of_1(m));
+//	return 0;
+//}

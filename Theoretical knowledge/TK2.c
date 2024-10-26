@@ -119,15 +119,19 @@
 //}
 
 //结构体是一种用户自定义的数据类型，它由若干个成员变量组成，每个成员变量都有自己的类型和名称。结构体可以包含其他结构体，甚至可以包含指针。
-//struct student {
+//struct student
+// {
 //	char name[20];
 //	int age;
 //	char sex;
 //	char address[50];//此处应改为char address[50];以存储字符串
 //};
-//void print(struct student* s1) {
-//	printf("%s, %d, %c, %s\n", s1->name, s1->age, s1->sex, s1->address);//struct student* s1 是参数，其中 struct student* 表示这个参数是一个指向 student 结构体的指针。通过指针来传递结构体变量，可以避免复制整个结构体，提高效率。
+//
+//void print(struct student* s1)
+// {
+//	printf("%s, %d, %c, %s\n", s1->name, s1->age, s1->sex, s1->address);//struct student* s1 是参数，其中 struct student* 表示这个参数是一个指向 student 结构体的指针。
 //}//结构体指针变量->成员名表示通过指针访问结构体的成员变量。
+// 
 //int main() {
 //	struct student s1 = {"Tom", 20, 'M', "Beijing"};//结构体变量s1的初始化。
 //	printf("%s, %d, %c, %s\n", s1.name, s1.age, s1.sex, s1.address);
@@ -135,6 +139,7 @@
 //	printf("%p\n", &s1);//打印结构体变量s1的地址。
 //	return 0;
 //}
+
 //结构体变量的声明和初始化：
 //struct 结构体名 变量名;
 //结构体变量的访问：变量名.成员名

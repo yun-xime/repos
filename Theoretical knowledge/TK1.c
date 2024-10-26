@@ -17,7 +17,7 @@ offsetof：宏函数，用于确定结构的某个成员到起始位置的偏移字节*/
 
 	//计算字数据类型的字节数
 	//printf("%zu\n", sizeof(char)); //printf()函数是一个库函数，用于输出字符串到控制台；库函数的使用必须引入头文件。
-	//printf("%zu\n", sizeof(int));//sizeof()函数用于计算变量或数据类型的字节数，而strlen()函数用于计算字符串的长度。
+	//printf("%zu\n", sizeof(int));//sizeof()函数用于计算变量或数据类型的字节数,返回值类型为size_t,打印时应该使用%zu。32位系统中size_t是unsigned int,64位系统中size_t是unsigned long long。
 	//printf("%zu\n", sizeof(short));
 	//printf("%zu\n", sizeof(float));
 	//printf("%zu\n", sizeof(double));
@@ -187,18 +187,18 @@ int max = (a > b ? a : (b > c ? b : c));在这个例子中，条件运算符的嵌套从右到左进
 //	}
 //	return ret;//执行完最后一个函数后会返回上一个函数（用调试可以看到ret的值并非直接返回main函数而是上一个Fact函数）。 即“从哪来从哪回去！”。
 //}
-// int main()
+//int main()
 //{
 //	int n = 0;
-//  int i = 1;
+//	int i = 1;
 //	int ret = 1;
 //	scanf("%d", &n);
 //	for (i = 1; i <= n; i++)
 //	{
 //		ret *= i;
 //	}
-//  printf("%d\n", ret);
-//  printf("%d\n", Fact(n));
+//    printf("%d\n", ret);
+//    printf("%d\n", Fact(n));
 //	return 0;
 //}
 //复杂函数：如果函数里有很多复杂的代码和逻辑，定义成内联函数会导致代码变得很长，增加可执行文件的大小，并且可能降低执行效率。 递归函数：递归函数是自己调用自己，定义成内联函数会导致无限展开，编译器无法正确处理。

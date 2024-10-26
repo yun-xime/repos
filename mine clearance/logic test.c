@@ -46,21 +46,21 @@ void SetMines(char mine[ROWS][COLS], int row, int col)
 			count--;
 		}
 	}
-	int i = 0, j = 0;
-	/*for (i = 0; i < ROWS; i++)
-	{
-		printf("%d ", i);
-	}
-	printf("\n");
-	for (i = 1; i < ROWS; i++)
-	{
-		printf("%d ", i);
-		for (j = 1; j < COLS; j++)
-		{
-			printf("%c ", mine[i][j]);
-		}
-		printf("\n");
-	}*/
+	//int i = 0, j = 0;
+	//for (i = 0; i < ROWS; i++)
+	//{
+	//	printf("%d ", i);
+	//}
+	//printf("\n");
+	//for (i = 1; i < ROWS; i++)
+	//{
+	//	printf("%d ", i);
+	//	for (j = 1; j < COLS; j++)
+	//	{
+	//		printf("%c ", mine[i][j]);
+	//	}
+	//	printf("\n");
+	//}
 }
 
 char may_mines(char mine[ROWS][COLS], int x, int y, int row, int col)

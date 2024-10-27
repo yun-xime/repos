@@ -160,86 +160,116 @@ X.........
 //	return 0;
 //}
 
-//洛谷题源：https://www.luogu.com.cn/problem/P1789
-void Fire(char matix[104][104], int n, int x, int y)
-{
-	for (int i = 0; i <= 2; i++)//上部
-	{
-		for (int j = y - i; j <= y + i; j++)
-		{
-			if (j >= 0 && j < 104 && x - 2 + i >= 0 && x - 2 + i < 104 && matix[x - 2 + i][j] == '*')
-			{
-				matix[x - 2 + i][j] = 'X';
-			}
-		}
-	}
-	int i, j = 1;
-	for (int i = 1; i <= 2; i++)//下部
-	{
-		for (int h = y - j; h <= y + j; h++)
-		{
-			if (h >= 0 && h < 104 && x + i >= 0 && x + i < 104 && matix[x + i][h] == '*')
-			{
-				matix[x + i][h] = 'X';
-			}
-		}
-		j--;
-	}
-	//形成一个菱形
-}
+//不高兴的津津。洛谷题源：https://www.luogu.com.cn/problem/P1085
+//int unhappy(int S1, int S2, int i, int* max)
+//{
+//	int n = S1 + S2;
+//	static int I = 0;//用静态变量防止每次进入函数时都重置I，保证只输出第一次出现的最大值。
+//	if (n > *max)//如果当前值大于最大值，则更新最大值和当前值。
+//	{
+//		*max = n;
+//		I = i;
+//	}
+//	return I;
+//}
+//
+//int main()
+//{
+//	int S1, S2;
+//	int OVO = 0;
+//	int max = 0;
+//	for (int i = 1; i < 8; i++)
+//	{
+//		scanf("%d %d", &S1, &S2);
+//		if (S1 + S2 > 8)
+//		{
+//			OVO = unhappy(S1, S2, i, &max);
+//		}
+//	}
+//	printf("%d", OVO);
+//	return 0;
+//}
 
-void Fluorite(char matix[104][104], int n, int x, int y)
-{
-	for (int i = x - 2; i <= x + 2; i++)
-	{
-		for (int j = y - 2; j <= y + 2; j++)
-		{
-			if (i >= 0 && i < 104 && j >= 0 && j < 104 && matix[i][j] == '*')
-			{
-				matix[i][j] = 'X';
-			}
-		}
-	}
-}
-
-int main()
-{
-	char matix[104][104] = { 0 };//火光可以照亮5x5范围内的一定空间，为防止火把插在边缘导致的数组越界，多加2个单位。
-	int n, m, k, x, y;
-	scanf("%d %d %d", &n, &m, &k);
-	int i = 0, j = 0;
-	for (i = 2; i < n + 2; i++)
-	{
-		for (j = 2; j < n + 2; j++)
-		{
-			matix[i][j] = '*';//初始化为全黑
-		}
-	}
-	for (int i = 2; i <= m + 1; i++)
-	{
-		scanf("%d %d", &x, &y);
-		matix[x + 1][y + 1] = '!';//标记火把
-		Fire(matix, n, x + 1, y + 1);
-	}
-	if (k != 0)
-	{
-		for (int i = m + 2; i <= m + k + 1; i++)
-		{
-			scanf("%d %d", &x, &y);
-			matix[x + 1][y + 1] = '!';//标记萤石
-			Fluorite(matix, n, x + 1, y + 1);
-		}
-	}
-	int count = 0;//不在每次标记亮部时计数，避免最终表达式过于复杂而不知道到底那一步出错。在数据较小时不用担心用for统计暗部带来的额外开销
-	for (i = 2; i <= n + 1; i++)
-	{
-		for (j = 2; j <= n + 1; j++)
-		{
-			if (matix[i][j] == '*')
-			{
-				count++;
-			}
-		}
-	}
-	printf("%d", count);
-}
+//MC生存。洛谷题源：https://www.luogu.com.cn/problem/P1789
+//void Fire(char matix[104][104], int n, int x, int y)
+//{
+//	for (int i = 0; i <= 2; i++)//上部
+//	{
+//		for (int j = y - i; j <= y + i; j++)
+//		{
+//			if (j >= 0 && j < 104 && x - 2 + i >= 0 && x - 2 + i < 104 && matix[x - 2 + i][j] == '*')
+//			{
+//				matix[x - 2 + i][j] = 'X';
+//			}
+//		}
+//	}
+//	int i, j = 1;
+//	for (int i = 1; i <= 2; i++)//下部
+//	{
+//		for (int h = y - j; h <= y + j; h++)
+//		{
+//			if (h >= 0 && h < 104 && x + i >= 0 && x + i < 104 && matix[x + i][h] == '*')
+//			{
+//				matix[x + i][h] = 'X';
+//			}
+//		}
+//		j--;
+//	}
+//	//形成一个菱形
+//}
+//
+//void Fluorite(char matix[104][104], int n, int x, int y)
+//{
+//	for (int i = x - 2; i <= x + 2; i++)
+//	{
+//		for (int j = y - 2; j <= y + 2; j++)
+//		{
+//			if (i >= 0 && i < 104 && j >= 0 && j < 104 && matix[i][j] == '*')
+//			{
+//				matix[i][j] = 'X';
+//			}
+//		}
+//	}
+//}
+//
+//int main()
+//{
+//	char matix[104][104] = { 0 };//火光可以照亮5x5范围内的一定空间，为防止火把插在边缘导致的数组越界，多加2个单位。
+//	int n, m, k, x, y;
+//	scanf("%d %d %d", &n, &m, &k);
+//	int i = 0, j = 0;
+//	for (i = 2; i < n + 2; i++)
+//	{
+//		for (j = 2; j < n + 2; j++)
+//		{
+//			matix[i][j] = '*';//初始化为全黑
+//		}
+//	}
+//	for (int i = 2; i <= m + 1; i++)
+//	{
+//		scanf("%d %d", &x, &y);
+//		matix[x + 1][y + 1] = '!';//标记火把
+//		Fire(matix, n, x + 1, y + 1);
+//	}
+//	if (k != 0)
+//	{
+//		for (int i = m + 2; i <= m + k + 1; i++)
+//		{
+//			scanf("%d %d", &x, &y);
+//			matix[x + 1][y + 1] = '!';//标记萤石
+//			Fluorite(matix, n, x + 1, y + 1);
+//		}
+//	}
+//	int count = 0;//不在每次标记亮部时计数，避免最终表达式过于复杂而不知道到底那一步出错。在数据较小时不用担心用for统计暗部带来的额外开销
+//	for (i = 2; i <= n + 1; i++)
+//	{
+//		for (j = 2; j <= n + 1; j++)
+//		{
+//			if (matix[i][j] == '*')
+//			{
+//				count++;
+//			}
+//		}
+//	}
+//	printf("%d", count);
+//}

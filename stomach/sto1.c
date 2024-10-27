@@ -255,3 +255,80 @@
 //	return 0;
 //}
 
+//正整数n是两个质数的乘积，求n的最大质因子。
+//int is_prime(int n)
+//{
+//	int j = 0;
+//	for (j = 2; j <= sqrt(n); j++)
+//	{
+//		if (0 == n % j)
+//		{
+//			return 0;
+//		}
+//	}
+//	return 1;
+//}
+//
+//
+//int main()
+//{
+//	int n;
+//	scanf("%d", &n);
+//	int m = 0;
+//	for (int i = 2; i <= n / 2; i++)
+//	{
+//		if (n % i == 0)
+//		{
+//			if (is_prime(i))
+//			{
+//				m = i;
+//				break;
+//			}
+//		}
+//	}
+//	printf("%d", n / m);//不难发现，找最小因子要循环的次数比找最大因子要少得多。而n = min * max, 所以n/min = max。
+//	return 0;
+//}
+
+//给出n个不大于10^5的整数，要求全部储存在数组中，去除掉不是质数的数字，依次输出剩余的质数。数据保证，1 <= n <= 100，1 <= a[i] <= 10^5。
+//int is_prime(int n)
+//{
+//	if (n < 2)
+//	{
+//		return 0;//0和1不是质数。题目明确n>=2时不需要该语句，可省略以提高效率。
+//	}
+//
+//	for (int j = 2; j <= sqrt(n); j++)
+//	{
+//		if (0 == n % j)
+//		{
+//			return 0;
+//		}
+//	}
+//	return 1;
+//}
+//int main()
+//{
+//	int n;
+//	scanf("%d", &n);
+//	int a[101];
+//	for (int i = 0; i < n; i++)
+//	{
+//		scanf("%d", &a[i]);
+//	}
+//	int b[101];
+//	int j = 0;
+//	for (int i = 0; i < n; i++)
+//	{
+//		if (is_prime(a[i]))
+//		{
+//			b[j++] = a[i];
+//		}
+//	}
+//	for (int i = 0; i < j; i++)
+//	{
+//		printf("%d ", b[i]);
+//	}
+//	return 0;
+//}
+

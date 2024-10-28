@@ -274,11 +274,306 @@ X.........
 //	printf("%d", count);
 //}
 
-/*现有 N 名同学，每名同学需要设计一个结构体记录以下信息：学号、学业成绩和素质拓展成绩、综合分数（实数）。
-每行读入同学的学号、学业成绩和素质拓展成绩,并且计算综合分数（分别按照 70% 和 30% 权重累加），存入结构体中。还需要在结构体中定义一个成员函数，返回该结构体对象的学业成绩和素质拓展成绩的总分。
-然后需要设计一个函数，其参数是一个学生结构体对象，判断该学生是否“优秀”。
-优秀的定义是学业和素质拓展成绩总分大于 140 分，且综合分数不小于 80 分。
-本题存在精度误差问题，请将 a * 0.7 + b * 0.3 与 80 比较 转化为 a * 7 + b * 3 与 800 比较。
-输入：第一个输入一个整数N；接下来N行，每行输入一个学生的学号、学业成绩和素质拓展成绩，用空格隔开。
-输出：N行，如果第i名学生是优秀的，则输出“Excellent”，否则输出“Not excellent”。
-数据保证：1 <= N <= 1000,学号为不超过100000整数，学业成绩和素质拓展成绩为不超过100的正整数*/
+//评等级。洛谷题源：https://www.luogu.com.cn/problem/P5742
+//#include <stdio.h>
+//#include <stdlib.h>
+//struct stu
+//{
+//	int id;
+//	double a;
+//	double b;
+//	double (*sum)(struct stu s);// 因为结构体里面不能定义函数，所以定义了一个指向函数的指针，该函数接受一个stu类型的结构体，并返回一个double类型的值
+//};
+//double sum(struct stu s)
+//{
+//	return s.a * 7 + s.b * 3;
+//}
+//
+//int main()
+//{
+//	int N;
+//	scanf("%d", &N);
+//	struct stu *s = (struct stu*)malloc(N * sizeof(struct stu));//由于结构体的特性*1)，直接定义 struct stu s[a](a为一个很大的常数）会导致栈占用非常严重，这时候应该用动态分配。
+//	if (s == NULL)
+//	{
+//		perror("malloc error");
+//		return 1;
+//	}
+//	for (int i = 0; i < N; i++)
+//	{
+//		scanf("%d %lf %lf", &s[i].id, &s[i].a, &s[i].b);
+//	}
+//	for (int i = 0; i < N; i++)
+//	{
+//		s[i].sum = sum;
+//		if (s[i].sum(s[i]) >= 800 && s[i].a + s[i].b > 140)
+//		{
+//			printf("Excellent\n");
+//		}
+//		else
+//		{
+//			printf("Not excellent\n");
+//		}
+//	}
+//	free(s);//每次使用动态分配都不能忘了释放内存。
+//	return 0;
+//}
+/*1)结构体的大小: 结构体的大小是其所有成员大小的总和。如果结构体包含多个较大的数据类型（如浮点数、数组等），那么每个结构体实例都可能占用大量内存。而数组通常只是一个相同类型的数据集合，其大小是可以通过一个简单的乘法计算得出的。
+
+结构体对齐: 为了提高效率，编译器通常会对结构体中的数据进行对齐。在结构体中，成员之间可能会插入填充字节，这样会使得结构体的实际占用内存比简单地将其所有成员的大小相加更大。这种对齐可能会增加结构体的大小。
+
+多维数组: 如果你使用的是多维数组，它的内存布局相对紧凑，与其他类型的数组相比，多维数组的行为可以更节省内存空间。在某些情况下，即使声明的元素数量相同，多维数组可能比每个元素都是结构体的数组占用的内存更少。
+
+局部变量的数量: 如果你在函数中声明多个结构体的实例，特别是在递归函数中，每个函数调用都需要在堆栈上分配相应的空间，这会迅速消耗堆栈空间。而对于数组，只需要一次性分配所有元素的内存，通常情况下不会像结构体实例那样快速增长。
+
+数据的管理: 在代码设计中，使用结构体意味着你可能创建了一个复杂的数据结构，而数组通常是简单的数据集合。这种复杂性可能导致你在函数中处理和管理数据时需要更大的堆栈空间*/
+
+//猴子吃桃，每天吃掉总数的一半并再吃一个，第n天只剩下1个，问最开始
+//#include <stdio.h>
+//#include <math.h>
+//int main()
+//{
+//	int n;
+//	scanf("%d", &n);
+//	int m = 1;
+//	if (n > 1)
+//	{
+//		for (int i = 1; i < n ; i++)
+//		{
+//			m += 3 * pow(2, i - 1) ;
+//		}
+//	}
+//	else if (n == 1)
+//	{
+//		m = 1;
+//	}
+//	printf("%d", m);
+//	return 0;
+//}
+
+//#include <stdio.h>
+//#include <stdlib.h>
+//void Print(int* arr, int sz)
+//{
+//	for (int i = 0; i < sz; i++)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//	printf("\n");
+//}
+//
+//
+//void MergeArr(int* arr, int* tmp, int left, int mid, int right)
+//{
+//	int begin1 = left;
+//	int end1 = mid;
+//	int begin2 = mid + 1;
+//	int end2 = right;
+//
+//	int i = begin1;
+//
+//	while (begin1 <= end1 && begin2 <= end2)
+//	{
+//		if (arr[begin1] < arr[begin2])
+//		{
+//			tmp[i] = arr[begin1];
+//			i++;
+//			begin1++;
+//		}
+//		else
+//		{
+//			tmp[i] = arr[begin2];
+//			i++;
+//			begin2++;
+//		}
+//	}
+//
+//	while (begin1 <= end1)
+//	{
+//		tmp[i] = arr[begin1];
+//		i++;
+//		begin1++;
+//	}
+//
+//	while (begin2 <= end2)
+//	{
+//		tmp[i] = arr[begin2];
+//		i++;
+//		begin2++;
+//	}
+//
+//	for (int i = left; i <= right; i++)
+//	{
+//		arr[i] = tmp[i];
+//	}
+//}
+//
+//
+//void MergeSortNonR(int* arr, int begin, int end)
+//{
+//	int* tmp = (int*)malloc(sizeof(int) * (end - begin + 1));
+//	if (tmp == NULL)
+//	{
+//		printf("malloc false\n");
+//		exit(-1);
+//	}
+//
+//	int gap = 1;
+//
+//	while (gap < (end - begin + 1))
+//	{
+//		for (int i = 0; i <= end; i = i + 2 * gap)
+//		{
+//			int left = i;
+//			int right = i + 2 * gap - 1;
+//			int mid = (right + left) / 2;
+//			if (right > end)
+//			{
+//				right = end;
+//			}
+//
+//			MergeArr(arr, tmp, left, mid, right);
+//		}
+//
+//		gap = gap * 2;
+//	}
+//	free(tmp);
+//}
+//
+//int main()
+//{
+//	int n,m;
+//	scanf("%d %d", &n, &m);
+//	int score[20];
+//	int sum = 0;
+//	int average = 0;
+//	int temp[20];
+//	while (n--)
+//	{
+//		for (int i = 0; i < m; i++)
+//		{
+//			scanf("%d", &score[i]);
+//		}
+//		MergeSortNonR(score, 0, m - 1);
+//		for (int i = 1; i < m - 1; i++)
+//		{
+//			sum += score[i];
+//		}
+//		average = sum / (m - 2);
+//		temp[n] = average;
+//		sum = 0;
+//	}
+//	MergeSortNonR(temp, 0, n - 1);
+//	double temp2 = temp[n - 1];
+//	printf("%.2lf", temp2);
+//	return 0;
+//}
+//
+//#include <stdio.h>
+//void o_O(double A[],int N)
+//{
+//	for (int i = 0; i < N - 1; i++)
+//	{
+//		for (int j = 0; j < N - 1 - i;j++)
+//		{
+//			double temp;
+//			if (A[j] > A[j + 1])
+//			{
+//				temp = A[j];
+//				A[j] = A[j + 1];
+//				A[j + 1] = temp;
+//			}
+//		}
+//	}
+//}
+//int main() 
+//{
+//    int n, m;
+//    scanf("%d %d", &n, &m);
+//    double score[20];
+//    double temp[20];
+//    int count = 0;
+//
+//    while (n--) 
+//    {
+//        double sum = 0;
+//        for (int i = 0; i < m; i++) 
+//        {
+//            scanf("%lf", &score[i]);
+//        }
+//
+//        o_O(score, m);
+//        for (int i = 1; i < m - 1; i++) 
+//        {
+//            sum += score[i];
+//        }
+//
+//        if (m - 2 > 0) 
+//        {
+//            double average = (double)sum / (m - 2);
+//            temp[count] = average;
+//            count++;
+//        }
+//    }
+//
+//    o_O(temp, count);
+//    double temp2 = (count > 0) ? temp[count - 1] : 0;
+//    printf("%.2lf", temp2);
+//    return 0;
+//}
+
+//唱歌比赛。洛谷题源：https://www.luogu.com.cn/problem/P5738
+#include <stdio.h>
+void o_O(double A[], int N)
+{
+    for (int i = 0; i < N - 1; i++)
+    {
+        for (int j = 0; j < N - 1 - i; j++)
+        {
+            double temp;
+            if (A[j] > A[j + 1])
+            {
+                temp = A[j];
+                A[j] = A[j + 1];
+                A[j + 1] = temp;
+            }
+        }
+    }
+}
+//int main()
+//{
+//    int n, m;
+//    scanf("%d %d", &n, &m);
+//
+//    double score[20];
+//    double temp[100];//要输入最多100个同学的成绩然后比较啊喂！还有，这次runtime error是因为数组大小不够。
+//    int count = 0;
+//
+//    while (n--)
+//    {
+//        double sum = 0;
+//        for (int i = 0; i < m; i++)
+//        {
+//            scanf("%lf", &score[i]);
+//        }
+//
+//        o_O(score, m);
+//        for (int i = 1; i < m - 1; i++)
+//        {
+//            sum += score[i];
+//        }
+//
+//        if (m - 2 > 0)
+//        {
+//            double average = (double)sum / (m - 2);
+//            temp[count] = average;
+//            count++;
+//        }
+//    }
+//    if (count > 0) {
+//        o_O(temp, count);
+//        double temp2 = temp[count - 1];
+//        printf("%.2lf\n", temp2);
+//    }
+//    return 0;
+//}

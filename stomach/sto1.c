@@ -332,3 +332,66 @@
 //	return 0;
 //}
 
+//最厉害的学生。洛谷题源：https://www.luogu.com.cn/problem/P5740
+//#include <stdio.h>
+//#include <stdlib.h>
+//struct stu
+//{
+//	char name[20];
+//	int a, b, c;
+//	int sum;
+//};
+//
+//int main()
+//{
+//	int N;
+//	scanf("%d", &N);
+//	struct stu *stu = (struct stu*)malloc(N * sizeof(struct stu));
+//	if (stu == NULL)
+//	{
+//		printf("Memory Error!\n");
+//		return 0;
+//	}
+//	for (int i = 0; i < N; i++)
+//	{
+//		scanf("%s %d %d %d", stu[i].name, &stu[i].a, &stu[i].b, &stu[i].c);
+//		stu[i].sum = stu[i].a + stu[i].b + stu[i].c;
+//	}
+//	int max_sum = 0;
+//	int max_index = 0;
+//	for (int i = 0; i < N; i++)
+//	{
+//		if (stu[i].sum > max_sum)
+//		{
+//			max_sum = stu[i].sum;
+//			max_index = i;//只输出
+//		}
+//	}
+//	printf("%s %d %d %d", stu[max_index].name,stu[max_index].a,stu[max_index].b,stu[max_index].c);
+//	free(stu);
+//	return 0;
+//}
+
+//求所有子集之和。洛谷题源：https://www.luogu.com.cn/problem/P2415
+#include <stdio.h>
+long long main()
+{
+	int s[30] = { 0 };
+	int i = 0;
+	char c;
+	do
+	{
+		scanf("%d", &s[i]);
+		i++;
+		c = getchar();
+	}while (c != '\n');
+	int sz = i;
+	long long sum = 0;
+	long long mult = 1ll << (sz - 1);//规律：每个元素在所有子集中出现的总次数为2^(n-1)。这里是求2^n-1。
+	for (int j = 0; j < sz; j++)
+	{
+		sum += s[j] * mult;
+	}
+	printf("%lld", sum);
+	return 0;
+}

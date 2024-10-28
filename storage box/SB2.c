@@ -1,6 +1,4 @@
 ﻿#define _CRT_SECURE_NO_WARNINGS
-#include <stdio.h>
-#include <string.h>
 //恶作剧：关机程序
 //int main()
 //{
@@ -23,7 +21,7 @@
 
 
 //猜数字游戏
-#include <stdlib.h> //for RAND_MAX
+//#include <stdlib.h> //for RAND_MAX
 //#include <time.h>//for time()
 //void menu()
 //{
@@ -229,7 +227,7 @@
 //	return 0;
 //}
 
-#include <windows.h>//for Sleep()
+//#include <windows.h>//for Sleep()
 //动态字符显示（逐字出现）
 //int main()
 //{
@@ -339,5 +337,205 @@
 //	double N = reverse(num);
 //	double new_num = num_dec + N;
 //	printf("%.3lf", new_num);
+//	return 0;
+//}
+
+//归并排序递归版本（从小到大排序）
+//#include<stdio.h>
+//#include<stdlib.h>
+//void Print(int* arr, int sz)
+//{
+//	for (int i = 0; i < sz; i++)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//	printf("\n");
+//}
+//
+////单趟归并排序
+//void MergeArr(int* arr, int* tmp, int left, int mid, int right)
+//{
+//	int begin1 = left;
+//	int end1 = mid;
+//	int begin2 = mid + 1;
+//	int end2 = right;
+//
+//	int i = begin1;
+//
+//	while (begin1 <= end1 && begin2 <= end2)
+//	{
+//		if (arr[begin1] < arr[begin2])
+//		{
+//			tmp[i] = arr[begin1];
+//			i++;
+//			begin1++;
+//		}
+//		else
+//		{
+//			tmp[i] = arr[begin2];
+//			i++;
+//			begin2++;
+//		}
+//	}
+//
+//	while (begin1 <= end1)
+//	{
+//		tmp[i] = arr[begin1];
+//		i++;
+//		begin1++;
+//	}
+//
+//	while (begin2 <= end2)
+//	{
+//		tmp[i] = arr[begin2];
+//		i++;
+//		begin2++;
+//	}
+//
+//	for (int i = left; i <= right; i++)
+//	{
+//		arr[i] = tmp[i];
+//	}
+//}
+//
+//void MergePartSort(int* arr, int* tmp, int begin, int end)//归并排序分区间和归并
+//{
+//
+//	if (begin >= end)
+//	{
+//		return;
+//	}
+//
+//	//分区间
+//	int mid = (begin + end) / 2;
+//
+//	MergePartSort(arr, tmp, begin, mid);
+//	MergePartSort(arr, tmp, mid + 1, end);
+//
+//	//归并
+//
+//	MergeArr(arr, tmp, begin, mid, end);
+//}
+//
+//void MergeSort(int* arr, int begin, int end)//归并排序
+//{
+//	int* tmp = (int*)malloc(sizeof(int) * (end - begin + 1));
+//	if (tmp == NULL)
+//	{
+//		printf("malloc false\n");
+//		exit(-1);
+//	}
+//
+//	MergePartSort(arr, tmp, begin, end);
+//
+//	free(tmp);
+//}
+//
+//int main()
+//{
+//	int arr1[] = { 1,5,2,10,3,4,8,9,5,3,1,5 };
+//	Print(arr1, sizeof(arr1) / sizeof(int));
+//	MergeSort(arr1, 0, sizeof(arr1) / sizeof(int) - 1);
+//	Print(arr1, sizeof(arr1) / sizeof(int));
+//	return 0;
+//}
+
+//归并排序非递归版本（从小到大排序）
+//#include <stdio.h>
+//#include <stdlib.h>
+//void Print(int* arr, int sz)
+//{
+//	for (int i = 0; i < sz; i++)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//	printf("\n");
+//}
+//
+//void MergeArr(int* arr, int* tmp, int left, int mid, int right)
+//{
+//	int begin1 = left;
+//	int end1 = mid;
+//	int begin2 = mid + 1;
+//	int end2 = right;
+//
+//	int i = begin1;
+//
+//	while (begin1 <= end1 && begin2 <= end2)
+//	{
+//		if (arr[begin1] < arr[begin2])
+//		{
+//			tmp[i] = arr[begin1];
+//			i++;
+//			begin1++;
+//		}
+//		else
+//		{
+//			tmp[i] = arr[begin2];
+//			i++;
+//			begin2++;
+//		}
+//	}
+//
+//	while (begin1 <= end1)
+//	{
+//		tmp[i] = arr[begin1];
+//		i++;
+//		begin1++;
+//	}
+//
+//	while (begin2 <= end2)
+//	{
+//		tmp[i] = arr[begin2];
+//		i++;
+//		begin2++;
+//	}
+//
+//	for (int i = left; i <= right; i++)
+//	{
+//		arr[i] = tmp[i];
+//	}
+//}
+//
+//
+//void MergeSortNonR(int* arr, int begin, int end)//归并排序非递归实现
+//{
+//	int* tmp = (int*)malloc(sizeof(int) * (end - begin + 1));
+//	if (tmp == NULL)
+//	{
+//		printf("malloc false\n");
+//		exit(-1);
+//	}
+//
+//	int gap = 1;
+//
+//	while (gap < (end - begin + 1))
+//	{
+//		for (int i = 0; i <= end; i = i + 2 * gap)
+//		{
+//			int left = i;
+//			int right = i + 2 * gap - 1;
+//			int mid = (right + left) / 2;
+//			if (right > end)
+//			{
+//				right = end;
+//			}
+//
+//			MergeArr(arr, tmp, left, mid, right);
+//		}
+//
+//		gap = gap * 2;
+//	}
+//
+//}
+//
+//int main()
+//{
+//	int arr2[] = { 1,5,2,10,3,4,8,9,5,3,1,5 };
+//
+//	Print(arr2, sizeof(arr2) / sizeof(int));
+//	MergeSortNonR(arr2, 0, sizeof(arr2) / sizeof(int) - 1);
+//	Print(arr2, sizeof(arr2) / sizeof(int));
+//
 //	return 0;
 //}

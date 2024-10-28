@@ -119,32 +119,34 @@
 //}
 
 //结构体是一种用户自定义的数据类型，它由若干个成员变量组成，每个成员变量都有自己的类型和名称。结构体可以包含标量、数组、指针甚至是其他结构体。
-///*struct student
-//{
-//	char name[20];
-//	int age;
-//	char sex;
-//}s1, s2;*///这里声明了两个全局结构体变量
-//struct student
-// {
-//	char name[20];
-//	int age;
-//	char sex;
-//	char address[50];//此处应改为char address[50];以存储字符串
-//};
-//
-//void print(struct student* s1)
-// {
-//	printf("%s, %d, %c, %s\n", s1->name, s1->age, s1->sex, s1->address);//struct student* s1 是参数，其中 struct student* 表示这个参数是一个指向 student 结构体的指针。
-//}//结构体指针变量->成员名表示通过指针访问结构体的成员变量。
-// 
-//int main() {
-//	struct student s1 = {"Tom", 20, 'M', "Beijing"};//结构体变量s1的初始化。
-//	printf("%s, %d, %c, %s\n", s1.name, s1.age, s1.sex, s1.address);
-//	print(&s1);//调用print函数，传入结构体变量s1的地址。
-//	printf("%p\n", &s1);//打印结构体变量s1的地址。
-//	return 0;
-//}
+struct peo
+{
+	int num;
+	float score;
+};
+ 
+struct student
+{
+	char name[20];
+	int age;
+	char sex[10];
+	char address[50];
+	struct peo p;
+};//p1,p2;//这里声明了两个全局结构体变量p1和p2。
+//struct peo p3,p4;//全局结构体变量。
+
+void print(struct student* s1)
+ {
+	printf("%s, %d, %s, %s %d, %f\n", s1->name, s1->age, s1->sex, s1->address, s1->p.num, s1->p.score);//struct student* s1 是参数，其中 struct student* 表示这个参数是一个指向 student 结构体的指针。
+}//结构体指针变量->成员名表示通过指针访问结构体的成员变量。
+ 
+int main() {
+	struct student s1 = { "Tom", 20, "Male", "China", {1, 80.5} };
+	//两种打印方式
+	print(&s1);//调用print函数，传入结构体变量s1的地址。因为形参是要新开一个空间把实参的元素全部拷贝进去，且拷贝也需要时间，使用当实参元素非常多时，应该使用指针传参来减少内存占用和提高效率。
+	printf("%s, %d, %s, %s %d, %f\n", s1.name, s1.age, s1.sex, s1.address, s1.p.num, s1.p.score);//结构体变量成员通过点操作符（.）访问。
+	return 0;
+}
 
 //结构体变量的声明和初始化：
 //struct 结构体名 变量名;

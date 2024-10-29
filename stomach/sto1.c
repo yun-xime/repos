@@ -373,25 +373,25 @@
 //}
 
 //求所有子集之和。洛谷题源：https://www.luogu.com.cn/problem/P2415
-#include <stdio.h>
-long long main()
-{
-	int s[30] = { 0 };
-	int i = 0;
-	char c;
-	do
-	{
-		scanf("%d", &s[i]);
-		i++;
-		c = getchar();
-	}while (c != '\n');
-	int sz = i;
-	long long sum = 0;
-	long long mult = 1ll << (sz - 1);//规律：每个元素在所有子集中出现的总次数为2^(n-1)。这里是求2^n-1。
-	for (int j = 0; j < sz; j++)
-	{
-		sum += s[j] * mult;
-	}
-	printf("%lld", sum);
-	return 0;
-}
+//#include <stdio.h>
+//long long main()
+//{
+//	int s[30] = { 0 };
+//	int i = 0;
+//	char c;
+//	do
+//	{
+//		scanf("%d", &s[i]);
+//		i++;
+//		c = getchar();
+//	}while (c != '\n');
+//	int sz = i;
+//	long long sum = 0;
+//	long long mult = 1ll << (sz - 1);//规律：每个元素在所有子集中出现的总次数为2^(n-1)。这里是求2^n-1。
+//	for (int j = 0; j < sz; j++)
+//	{
+//		sum += s[j] * mult;
+//	}
+//	printf("%lld", sum);
+//	return 0;
+//}

@@ -137,10 +137,9 @@
 //}
 
 //判断素数（即质数）
-//int is_prime(int n)
+//int prime(int n)
 //{
-//	int j = 0;
-//	for (j = 2; j <= sqrt(n); j++)
+//	for (int j = 2; j <= sqrt(n); j++)
 //	{
 //		if (0 == n % j)
 //		{
@@ -154,7 +153,7 @@
 //{
 //	int i = 0;
 //	scanf("%d", &i);
-//		if (is_prime(i))
+//		if (prime(i))
 //		{
 //			printf("It is a prime number");
 //		}
@@ -338,6 +337,12 @@
 //	double new_num = num_dec + N;
 //	printf("%.3lf", new_num);
 //	return 0;
+//}
+//简化（整数适用）
+// int reversed = 0, original = num;
+//while (num > 0) {
+//    reversed = reversed * 10 + num % 10;//逆序数
+//    num /= 10;//去掉最后一位
 //}
 
 //归并排序递归版本（从小到大排序）

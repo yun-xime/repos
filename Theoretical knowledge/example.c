@@ -1,7 +1,3 @@
-#define _CRT_SECURE_NO_WARNINGS
-#include <stdio.h>
-#include <string.h>
-
 char ch = 65;
 
 //char S[201];
@@ -11,3 +7,6 @@ char ch = 65;
 // strtok() 函数用于分割字符串。
 
 //strcmp() 函数用于比较两个字符串是否相同。
+
+//pow(x, y) 函数用于计算 x 的 y 次方。
+

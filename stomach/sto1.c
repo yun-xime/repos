@@ -397,3 +397,48 @@
 //	return 0;
 //}
 
+//列出[a,b](5<=a<=b<=10^8)中所有的回文质数（从左往右读和从右往左读都是一样的数）。洛谷题源：https://www.luogu.com.cn/problem/P1217
+//规律：1.偶数位的回文数不是质数。2.正偶数都不是质数。
+//#include <stdio.h>
+//#include <math.h>
+//
+//int is_prime(int n) {
+//    if (n < 2) return 0;
+//    if (n == 2) return 1;
+//    if (n % 2 == 0) return 0;
+//    for (int j = 3; j * j <= n; j += 2) {
+//        if (n % j == 0) {
+//            return 0;
+//        }
+//    }
+//    return 1;
+//}
+//
+//int is_palindrome(int num) {
+//    int reversed = 0, original = num;
+//    while (num > 0) {
+//        reversed = reversed * 10 + num % 10;//逆序数
+//        num /= 10;//去掉最后一位
+//    }
+//    return original == reversed;//通过比较original和reversed来判断这个数字是否是回文数。如果相等，则返回1，否则返回0。
+//}
+//
+//int main() {
+//    int a, b;
+//    scanf("%d %d", &a, &b);
+//    if (a % 2 == 0)a++;//保证循环从奇数开始
+//    if (b >= 9999999) b = 9999999;//再大的数都不可能是回文数
+//    for (int i = a; i <= b; i++) {
+//        if (is_palindrome(i)) {
+//            int len = log10(i) + 1;
+//            if (len % 2 == 1 && is_prime(i)) {
+//                printf("%d\n", i);
+//            }
+//        }
+//        if (i == 11)//上面那条筛掉了11，这里补上
+//        {
+//            printf("11\n");
+//        }
+//    }
+//}
+

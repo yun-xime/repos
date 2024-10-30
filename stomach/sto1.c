@@ -442,3 +442,77 @@
 //    }
 //}
 
+//#include <stdio.h>
+//#include <stdlib.h>
+//#include <string.h>
+//#include <math.h>
+//
+//struct stu {
+//    char name[9];
+//    int chinese, math, english;
+//    int sum;
+//};
+//
+//int cmp(const void* a, const void* b) {
+//    return strcmp(((struct stu*)a)->name, ((struct stu*)b)->name);
+//}
+//
+//int main() {
+//    int N;
+//    scanf("%d", &N);
+//    struct stu* students = (struct stu*)malloc(N * sizeof(struct stu));
+//    if (students == NULL) {
+//        printf("Memory Error!\n");
+//        return 0;
+//    }
+//
+//    for (int i = 0; i < N; i++) {
+//        scanf("%s %d %d %d", students[i].name, &students[i].chinese, &students[i].math, &students[i].english);
+//        students[i].sum = students[i].chinese + students[i].math + students[i].english;
+//    }
+//
+//    qsort(students, N, sizeof(struct stu), cmp);
+//
+//    for (int i = 0; i < N - 1; i++) {
+//        for (int j = i + 1; j < N; j++) {
+//            if (abs(students[i].chinese - students[j].chinese) <= 5 &&
+//                abs(students[i].math - students[j].math) <= 5 &&
+//                abs(students[i].english - students[j].english) <= 5 &&
+//                abs(students[i].sum - students[j].sum) <= 10) {
+//                printf("%s %s\n", students[i].name, students[j].name);
+//            }
+//        }
+//    }
+//
+//    free(students);
+//    return 0;
+//}
+
+long long int quik_power(int base, int power)
+{
+	long long int result = 1;
+	while (power > 0)           //指数大于0进行指数折半，底数变其平方的操作
+	{
+		if (power % 2 == 1)     //指数为奇数
+		{
+			power -= 1;         //指数减一
+			power /= 2;         //指数折半
+			result *= base;     //分离出当前项并累乘后保存
+			base *= base;       //底数变其平方
+		}
+		else                    //指数为偶数
+		{
+			power /= 2;         //指数折半
+			base *= base;       //底数变其平方
+		}
+	}
+	return result;              //返回最终结果
+}
+
+int main()
+{
+	int a = 4, n = 12;
+	long long int result = quik_power(a, n);
+	printf("%lld", result);
+	return 0;
+}

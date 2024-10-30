@@ -357,3 +357,68 @@
 //	}
 //	return 0;
 //}
+
+//字典序排列
+//这里我们引用了string.h库里的比较函数strcmp()和复制函数strpy()
+//char a[201][201];//使用二维数组，每行单独存放一个字符串（在一维数组会导致字符串拆解，即abc和bac会被拆解为a,b,c,a,b,c然后再存放，a[0]索引的会是'a'而不是"abc"。）
+//由于二维数组比一维数组结构更复杂，占用的栈空间也更大，所以尽量使用动态分配内存。
+//#include <stdio.h>
+//#include <stdlib.h>
+//#include <string.h>
+//
+//int main() {
+//    int n;
+//    scanf("%d", &n);
+//
+//    char (*a)[100] = malloc(n * sizeof(*a));
+//    if (a == NULL)
+//    {
+//        perror("malloc error");
+//        return 1;
+//    }
+//
+//    char b[100]; // 临时数组
+//
+//    for (int i = 0; i < n; i++)
+//    {
+//        scanf("%s", a[i]);
+//    }
+//
+//    // 排序字符串
+//    for (int i = 0; i < n; i++)
+//    {
+//        for (int j = i + 1; j < n; j++)
+//        {
+//            if (strcmp(a[i], a[j]) > 0)
+//            {
+//                strcpy(b, a[i]);
+//                strcpy(a[i], a[j]);
+//                strcpy(a[j], b);
+//            }
+//        }
+//    }
+//
+//    free(a); // 释放内存
+//    return 0;
+//}
+
+//快速幂：二进制法
+//long long quickPower(long long base, long long exponent)
+//{
+//	long long result = 1;
+//	while (exponent > 0)
+//	{
+//		if (exponent & 1)
+//		{
+//			result *= base;
+//		}
+//		base *= base;
+//		exponent >>= 1;
+//	}
+//	return result;
+//}
+
+//取余公式
+//(a + b) % p = (a % p + b % p) % p
+//(a - b) % p = (a % p - b % p) % p
+//(a * b) % p = (a % p * b % p) % p	int c = a % b;

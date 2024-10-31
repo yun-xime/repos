@@ -487,32 +487,230 @@
 //    free(students);
 //    return 0;
 //}
-
-long long int quik_power(int base, int power)
+//另解:直接生成回文数
+#/*include <stdio.h>
+#include <math.h>
+int is_prime(int n)
 {
-	long long int result = 1;
-	while (power > 0)           //指数大于0进行指数折半，底数变其平方的操作
-	{
-		if (power % 2 == 1)     //指数为奇数
-		{
-			power -= 1;         //指数减一
-			power /= 2;         //指数折半
-			result *= base;     //分离出当前项并累乘后保存
-			base *= base;       //底数变其平方
-		}
-		else                    //指数为偶数
-		{
-			power /= 2;         //指数折半
-			base *= base;       //底数变其平方
-		}
-	}
-	return result;              //返回最终结果
+    for (int j = 3; j <= sqrt(n); j++)
+    {
+        if (0 == n % j)
+        {
+            return 0;
+        }
+    }
+    return 1;
 }
 
 int main()
 {
-	int a = 4, n = 12;
-	long long int result = quik_power(a, n);
-	printf("%lld", result);
-	return 0;
-}
+    int a, b;
+    scanf("%d %d", &a, &b);
+    if (a % 2 == 0)a++;
+    for (int i = a; i <= 11; i+=2)
+    {
+        if (i == 5)
+        {
+            printf("%d\n", i);
+            continue;
+        }
+        else if (i == 7)
+        {
+            printf("%d\n", i);
+            continue;
+        }
+        else if (i == 11)
+        {
+            printf("%d\n", i);
+            continue;
+        }
+    }
+    int d1, d2, d3, palindrome;
+    if (b > 100)
+    {
+        for (d1 = 1; d1 <= 9; d1 += 2)
+        {
+            for (d2 = 0; d2 <= 9; d2++)
+            {
+                palindrome = 100 * d1 + 10 * d2 + d1;
+                if (is_prime(palindrome) && palindrome <= b && palindrome >= a)
+                {
+                    printf("%d\n", palindrome);
+                }
+                else if (palindrome > b)
+                {
+                    break;
+                }
+            }
+            if (palindrome > b)
+            {
+                break;
+            }
+        }
+    }
+    else if (b <= 100)
+    {
+        return 0;
+    }
+
+    if (b > 10000)
+    {
+        for (d1 = 1; d1 <= 9; d1 += 2)
+        {
+            for (d2 = 0; d2 <= 9; d2++)
+            {
+                for (d3 = 0; d3 <= 9; d3++)
+                {
+                    palindrome = 10000 * d1 + 1000 * d2 + 100 * d3 + 10 * d2 + d1;
+                    if (is_prime(palindrome) && palindrome <= b && palindrome >= a)
+                    {
+                        printf("%d\n", palindrome);
+                    }
+                    else if (palindrome > b)
+                    {
+                        goto end;
+                    }
+                }
+            }
+        }
+    }
+    else if (b <= 10000)
+    {
+        return 0;
+    }
+
+    if (b > 1000000)
+    {
+        for (d1 = 1; d1 <= 9; d1 += 2)
+        {
+            for (d2 = 0; d2 <= 9; d2++)
+            {
+                for (d3 = 0; d3 <= 9; d3++)
+                {
+                    for (int d4 = 0; d4 <= 9; d4++)
+                    {
+                        palindrome = 1000000 * d1 + 100000 * d2 + 10000 * d3 + 1000 * d4 + 100 * d3 + 10 * d2 + d1;
+                        if (is_prime(palindrome) && palindrome <= b && palindrome >= a)
+                        {
+                            printf("%d\n", palindrome);
+                        }
+                        else if (palindrome > b)
+                        {
+                            goto end;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    else if (b <= 1000000)
+    {
+        return 0;
+    }
+    end:
+    return 0;
+}*/
+
+//快速幂：指数折半法。源地址：https://blog.csdn.net/m0_52072919/article/details/116400820
+//long long int quik_power(int base, int power)
+//{
+//	long long int result = 1;
+//	while (power > 0)           //指数大于0进行指数折半，底数变其平方的操作
+//	{
+//		if (power % 2 == 1)     //指数为奇数
+//		{
+//			power -= 1;         //指数减一
+//			power /= 2;         //指数折半
+//			result *= base;     //分离出当前项并累乘后保存
+//			base *= base;       //底数变其平方
+//		}
+//		else                    //指数为偶数
+//		{
+//			power /= 2;         //指数折半
+//			base *= base;       //底数变其平方
+//		}
+//	}
+//	return result;              //返回最终结果
+//}
+//
+//int main()
+//{
+//	int a = 4, n = 12;
+//	long long int result = quik_power(a, n);
+//	printf("%lld", result);
+//	return 0;
+//}
+//优化：
+/*1.不管指数是否为奇数偶数，指数折半和底数变其平方是都需要进行的必要操作我们可以直接写在判断语句外面。
+2.如果指数是奇数的话有个减一操作，但在代码中我们可以省略这个，因为代码中指数是整数int类型，当power是奇数时小数点会被舍弃，这相当于power减一后再除二的操作。例如：power= 3的时候power / 2 = 相当于power-1后power=2后power / 2 = 1。
+3.我们可以发现一个规律，奇数的二进制位末尾是1，偶数的二进制位是0。
+4.位运算要比取余运算要快。指数折半操作也可以使用位运算的左移运算来完成。*/
+//优化后的代码与“快速幂：二进制法”别无二致，只是理解的角度不同罢了。
+
+//人见人爱A^B。题源：https://acm.hdu.edu.cn/showproblem.php?pid=2035
+//#include<stdio.h>
+//long long int quik_power(int base, int power, int p);
+//int main(void)
+//{
+//	int n, m;
+//	long long int ans;
+//	while (scanf("%d %d", &n, &m) && (n || m))//当输入为0 0时结束循环。因为||的逻辑是或，即左右两边只要有一个为真，则表达式为真。
+//	{
+//		ans = quik_power(n, m, 1000);//模上1000，表示取出该数的最后三位。
+//		printf("%lld\n", ans);
+//	}
+//	return 0;
+//}
+//
+//long long int quik_power(int base, int power, int p)
+//{
+//	long long int result = 1;
+//	while (power > 0)
+//	{
+//		if (power & 1)//检查是否为奇数
+//			result = result * base % p;
+//		base = base * base % p;
+//		power >>= 1;
+//	}
+//	return result % p;
+//}
+
+/*给定每个起火部分的起点和终点，请你求出燃烧位置的长度之和。
+输入格式
+第一行一个整数，表示起火的信息条数 n。接下来 n 行，每行两个整数 a,b，表示一个着火位置的起点和终点（注意：左闭右开）。
+输出格式:输出一行一个整数表示答案。
+数据保证：1 <= n <= 2*10^4，-2^31 <= a<b <= 2^31,且答案小于2^31。*/
+//#include<stdio.h>
+//#include<stdlib.h>
+//
+//long long int cmp(const void* a, const void* b)
+//{
+//	return *(long long*)a - *(long long*)b;
+//}
+//
+//int main()
+//{
+//	int n;
+//	scanf("%d", &n);
+//	long long a[20001], b[20001], len = 0;
+//	for (int i = 0; i < n; i++)
+//	{
+//		scanf("%lld %lld", &a[i], &b[i]);
+//	}
+//	qsort(a, n, sizeof(long long), cmp);
+//	qsort(b, n, sizeof(long long), cmp);
+//	for (int i = 0; i < n; i++)
+//	{
+//		len += b[i] - a[i];
+//		if (i + 1 < n)
+//		{
+//			if (b[i] > a[i + 1])
+//			{
+//				len -= b[i] - a[i + 1];
+//			}
+//		}
+//	}
+//	printf("%lld", len);
+//	return 0;
+//}
+

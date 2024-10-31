@@ -421,4 +421,4 @@
 //ȡ�๫ʽ
 //(a + b) % p = (a % p + b % p) % p
 //(a - b) % p = (a % p - b % p) % p
-//(a * b) % p = (a % p * b % p) % p	int c = a % b;
+//(a * b) % p = (a % p * b % p) % p	

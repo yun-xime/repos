@@ -1,5 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS
-#include <stdio.h>
+//#include <stdio.h>
 
 /*给定一个整数N。对其K次以下操作，并输出整数结果：如果N是200的倍数，则除以200；否则，将N视为字符串，并在其末尾添加200。
 约束条件：1 <= N <=10^5;1 <= K <= 20。输入：N和K，用空格隔开*/
@@ -577,3 +577,5 @@ void o_O(double A[], int N)
 //    }
 //    return 0;
 //}
+//
+

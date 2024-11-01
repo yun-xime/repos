@@ -1,5 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS
-//#include <stdio.h>
+#include <stdio.h>
 
 /*给定一个整数N。对其K次以下操作，并输出整数结果：如果N是200的倍数，则除以200；否则，将N视为字符串，并在其末尾添加200。
 约束条件：1 <= N <=10^5;1 <= K <= 20。输入：N和K，用空格隔开*/
@@ -293,5 +293,220 @@ X.........
 //		m = 1;
 //	}
 //	printf("%d", m);
+//	return 0;
+//}
+
+//有N号雪橇，编号为1, 2, …, N。需要Ri只驯鹿来拉i号雪橇。此外，每只驯鹿最多只能拉一只雪橇。回答以下形式为Q的查询：给定整数X。确定当有X只驯鹿时可以拉动的最大雪橇数量。
+//数据保证：1≤N,Q≤2×10^5,1≤Ri≤10^9,1≤X≤2×10^14，所有输入的数都为整数。
+//#include <stdio.h>
+//#include <stdlib.h>
+//
+//int cmp(const void* a, const void* b)
+//{
+//	return (*(long long*)a - *(long long*)b);
+//}
+//
+//int main()
+//{
+//	int n, q;
+//	scanf("%d %d", &n, &q);
+//	long long* a = (long long*)malloc(n * sizeof(long long));
+//	for (int i = 0; i < n; i++)
+//	{
+//		scanf("%lld", &a[i]);
+//	}
+//	qsort(a, n, sizeof(long long), cmp);
+//    while (q--)
+//    {
+//        long long x;
+//        scanf("%lld", &x);
+//        long long sum = 0;
+//        int count = 0;
+//
+//        for (int i = 0; i < n; i++)
+//        {
+//            sum += a[i];
+//            if (sum <= x)
+//            {
+//                count++;
+//            }
+//            else
+//            {
+//                break;
+//            }
+//        }
+//        printf("%d\n", count);
+//    }
+//	free(a);
+//	return 0;
+//}
+
+//#include <stdio.h>
+//#include <stdlib.h>
+//
+//int cmp(const void* a, const void* b)
+//{
+//    return (*(long long*)a - *(long long*)b);
+//}
+//
+//int binary_search(long long* arr, int size, long long x) {
+//    long long sum = 0;
+//    int left = 0, right = size - 1;
+//
+//    while (left <= right) {
+//        int mid = left + (right - left) / 2;
+//
+//        sum += arr[mid];
+//
+//        if (sum <= x) {
+//            left = mid + 1;
+//        }
+//        else {
+//            right = mid - 1;
+//        }
+//    }
+//
+//    return right + 1;
+//}
+//
+//int main()
+//{
+//    int n, q;
+//    scanf("%d %d", &n, &q);
+//    long long* a = (long long*)malloc(n * sizeof(long long));
+//
+//    for (int i = 0; i < n; i++)
+//    {
+//        scanf("%lld", &a[i]);
+//    }
+//
+//    qsort(a, n, sizeof(long long), cmp);
+//
+//    while (q--)
+//    {
+//        long long x;
+//        scanf("%lld", &x);
+//        int result = binary_search(a, n, x);
+//        printf("%d\n", result);
+//    }
+//
+//    free(a);
+//    return 0;
+//}
+
+/*我们有一个正整数序列：N个正整数，A=(A1,…,AN)。让B是A的10^100个副本的连接(如，A={3.5,2}时，B={3,5,2,3,5,2...}。考虑从左到右求和B的项。第一次总和超过X是什么时候？
+数据保证：1≤N≤10^5,1≤Ai≤10^9,1≤X≤10^18输入中的所有值都是整数。*/
+//#include <stdio.h>
+//#include <stdlib.h>
+//int main()
+//{
+//	int n;
+//	scanf("%d", &n);
+//	int* a = (int*)malloc(n * sizeof(int));
+//	for (int i = 0; i < n; i++)
+//	{
+//		scanf("%d", &a[i]);
+//	}
+//	long long x;
+//	scanf("%lld", &x);
+//	long long all_sum = 0;
+//	for (int i = 0; i < n; i++) {
+//		all_sum += a[i];
+//	}
+//
+//	long long QAQ = x / all_sum;
+//	long long curr_sum = QAQ * all_sum;
+//
+//	long long count = QAQ * n;
+//	for (int i = 0; i < n; i++) {
+//		curr_sum += a[i];
+//		count++;
+//		if (curr_sum >= x) {
+//			printf("%lld\n", count);
+//			break;
+//		}
+//	}
+//
+//	free(a);
+//	return 0;
+//}
+
+//给定一个长度为N的字符串S，由A、C、G和T组成。回答以下Q个查询：查询i（1≤i≤Q）：给定整数li和ri（1≤li<ri≤N1≤li< ri≤N），考虑从索引li开始到索引ri结束（包括两端）的子字符串。在该字符串中，AC作为子字符串出现了多少次？
+//数据保证：1≤N≤10^5,1≤Q≤10^5,S的长度为N,且只包含字符A、C、G、T。
+//#include <stdio.h>
+//#include <stdlib.h>
+//int main()
+//{
+//    int n, q;
+//    scanf("%d %d", &n, &q);
+//    char* s = (char*)malloc(n + 1 * sizeof(char));
+//    scanf("%s", s);
+//    for (int i = 0; i < q; i++)
+//    {
+//        int l, r;
+//        scanf("%d %d", &l, &r);
+//        int count = 0;
+//        for (int j = l; j < r; j++)
+//        {
+//            if (s[j - 1] == 'A' && s[j] == 'C')
+//            {
+//                count++;
+//            }
+//        }
+//        printf("%d\n", count);
+//    }
+//    free(s);
+//    return 0;
+//}
+
+//查询一个字符串数组中，l到r范围内AC出现的次数。
+//#include <stdio.h>
+//#include <stdlib.h>
+//
+//int main()
+//{
+//    int n, q;
+//    scanf("%d %d", &n, &q);
+//    char* a = (char*)malloc((n + 1) * sizeof(char));
+//    scanf("%s", a);
+//
+//    int* s = (int*)malloc((n + 1) * sizeof(int));
+//    s[0] = 0;
+//    for (int i = 1; i < n; i++)
+//    {
+//        s[i] = s[i - 1];//统计s[i]之前AC出现的次数。
+//        if (a[i - 1] == 'A' && a[i] == 'C') 
+//        {
+//            s[i]++;
+//        }
+//    }
+//
+//    for (int i = 0; i < q; i++)
+//    {
+//        int l, r;
+//        scanf("%d %d", &l, &r);
+//        int count = s[r - 1] - s[l - 1];
+//        printf("%d\n", count);
+//    }
+//
+//    free(a);
+//    free(s);
+//    return 0;
+//}
+
+//用指针数组模拟二维数组。
+//int main()
+//{
+//	int arr1[3] = { 1,2,3 };
+//	int arr2[3] = { 4,5,6 };
+//	int* arr[2] = { arr1,arr2 };//通常数组名就是数组首元素的地址，所以不需要取地址符。
+//	for (int i = 0; i < 2; i++)
+//	{
+//		for (int j = 0; j < 3; j++)
+//		{
+//			printf("%d ", arr[i][j]);
+//		}
+//		puts("");
+//	}
 //	return 0;
 //}

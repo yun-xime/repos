@@ -3,6 +3,47 @@
 #include <stdlib.h>
 #include <string.h>
 
+//模拟strcpy函数
+//void mystrcpy(char* dest, char* src)
+//{
+//	while (*src != '\0')
+//	{
+//		*dest = *src;
+//		dest++;
+//		src++;
+//	}
+//	*dest = '\0';
+//}
+////
+//void mystrcat(char x[], char y[])
+//{
+//	int i = 0;
+//	while (x[i] != '\0')
+//	{
+//		y[i] = x[i];
+//		i++;
+//	}
+//	y[i] = '\0';
+//}
+////
+//void mystrcpy(char* dest, char* src)
+//{
+//	while(*dest++ = *src++)//\0的ASCII码为0，所以循环到字符串末尾时，*dest为0，循环结束。
+//	{
+//		;
+//	}
+//}
+//char* mystrcpy(char* dest, char* src)
+//{
+//	char* p = dest;//保存 dest 的地址。这是为了在函数执行完后返回原始的目标地址，以便调用者能够知道字符串复制的开始位置。
+//	assert(dest != NULL && src != NULL);//检查参数是否为空。
+//	while(*dest++ = *src++)
+//	{
+//		;
+//	}
+//	return p;//返回原始的目标地址。方便实现链式访问。
+//}
+
 //模拟选择题
 //int main()
 //{

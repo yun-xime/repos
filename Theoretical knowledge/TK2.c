@@ -341,25 +341,25 @@
 //}
 
 //函数指针：
-int add(int a, int b)
-{
-	return a + b;
-}
-int sub(int a, int b)
-{
-	return a - b;
-}
-int (*pfun)(int, int) = add;
-int main()
-{
-	int a = 10, b = 5;
-	int result = pfun(a, b);
-	printf("%d\n", result);
-	pfun = sub;
-	result = pfun(a, b);
-	printf("%d\n", result);
-	return 0;
-}
+//int add(int a, int b)
+//{
+//	return a + b;
+//}
+//int sub(int a, int b)
+//{
+//	return a - b;
+//}
+//int (*pfun)(int, int) = add;
+//int main()
+//{
+//	int a = 10, b = 5;
+//	int result = pfun(a, b);
+//	printf("%d\n", result);
+//	pfun = sub;//将函数指针 pfun 的指向更改为 sub 函数。
+//	result = pfun(a, b);
+//	printf("%d\n", result);
+//	return 0;
+//}
 //函数指针的声明：
 //返回类型 (*变量名)(参数表列)
 //函数指针变量的声明和初始化：

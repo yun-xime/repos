@@ -494,3 +494,90 @@ X.........
 //    return 0;
 //
 
+//后缀表达式,洛谷题源：https://www.luogu.com.cn/problem/P1996
+//#include <stdio.h>
+//#include <stdlib.h>
+//#include <ctype.h>
+//
+//#define MAX_SIZE 100
+//
+//typedef struct {
+//    int data[MAX_SIZE];
+//    int top;
+//} Stack;
+//
+//void initStack(Stack *s) {
+//    s->top = -1;
+//}
+//
+//int isFull(Stack *s) {
+//    return s->top == MAX_SIZE - 1;
+//}
+//
+//int isEmpty(Stack *s) {
+//    return s->top == -1;
+//}
+//
+//void push(Stack *s, int value) {
+//    if (!isFull(s)) {
+//        s->data[++(s->top)] = value;
+//    }
+//}
+//
+//int pop(Stack *s) {
+//    if (!isEmpty(s)) {
+//        return s->data[(s->top)--];
+//    }
+//    return 0; // 这里简单处理，实际情况可以改为返回错误值
+//}
+//
+//int evaluatePostfix(char *expression) {
+//    Stack s;
+//    initStack(&s);
+//    int i = 0;
+//
+//    while (expression[i] != '@') {
+//        if (isdigit(expression[i])) {
+//            // 处理操作数
+//            int num = 0;
+//            while (isdigit(expression[i])) {
+//                num = num * 10 + (expression[i] - '0');
+//                i++;
+//            }
+//            push(&s, num);
+//        } else if (expression[i] == '.') {
+//            i++; // 跳过操作数结束符.
+//        } else if (strchr("+-*/", expression[i])) {
+//            // 遇到运算符
+//            int b = pop(&s);
+//            int a = pop(&s);
+//            int result;
+//            switch (expression[i]) {
+//                case '+':
+//                    result = a + b;
+//                    break;
+//                case '-':
+//                    result = a - b;
+//                    break;
+//                case '*':
+//                    result = a * b;
+//                    break;
+//                case '/':
+//                    result = a / b; // 由于题目保证除数不为0，这里直接使用
+//                    break;
+//            }
+//            push(&s, result);
+//            i++;
+//        }
+//    }
+//
+//    return pop(&s); // 最后栈中应该只剩下一个结果
+//}
+//
+//int main() {
+//    char expression[MAX_SIZE];
+//    scanf("%s", expression);
+//    int result = evaluatePostfix(expression);
+//    printf("%d\n", result);
+//    return 0;
+//}

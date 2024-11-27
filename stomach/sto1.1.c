@@ -581,3 +581,54 @@ X.........
 //    printf("%d\n", result);
 //    return 0;
 //}
+
+//约瑟夫问题。
+//#include <stdio.h>
+//int main() {
+//    int n, m;
+//    int a[105] = { 0 };
+//    scanf("%d %d", &n, &m);
+//    int num = n, last = 0;
+//
+//    while (num) {
+//        int cnt = 0;
+//        for (int i = last; cnt != m; i++) {
+//            if (i >= n) i %= n;//如果索引 i 超出了人数 n，则对 n 取模，以实现循环。
+//            if (a[i] == -1) continue;
+//            cnt++;
+//            if (cnt == m) {
+//                a[i] = -1;
+//                num--;
+//                last = i + 1;
+//                printf("%d ", i + 1);
+//                break;
+//            }
+//        }
+//    }
+//    return 0;
+//}
+//int main()
+//{
+//    int a[105] = { 0 };
+//    int m, n, i = 1, sum = 0, k = 0;
+//    scanf("%d %d", &n, &m);
+//    while (n != sum)
+//    {
+//        if (i > n)
+//            i = 1;
+//        if (a[i] == 0)
+//        {
+//            k++;
+//            if (k == m)
+//            {
+//                sum++;
+//                k = 0;
+//                a[i] = 1;
+//                printf("%d ", i);
+//            }
+//        }
+//        i++;
+//    }
+//    return 0;
+//}
+

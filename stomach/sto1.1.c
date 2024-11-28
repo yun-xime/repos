@@ -632,3 +632,103 @@ X.........
 //    return 0;
 //}
 
+//#include <stdio.h>
+//#include <stdlib.h>
+//#include <string.h>
+//#include <math.h>
+//struct meg {
+//	int x, y;
+//};
+//int cmp(const void* a, const void* b)
+//{
+//	return ((struct meg*)a)->x - ((struct meg*)b)->x;
+//}
+//
+//int main()
+//{
+//	int n,k; scanf("%d %d", &n, &k);
+//	struct meg* a = (struct meg*)malloc(n * sizeof(struct meg));
+//	for (int i = 0; i < n; i++)
+//	{
+//		a[i].y = i + 1;
+//		scanf("%d", &a[i].x);
+//	}
+//	qsort(a, n, sizeof(struct meg), cmp);
+//	int min = 1000;
+//	for(int i = 0; i < n - 1; i++)
+//	{
+//		for (int j = i + 1; j < n; j++)
+//		{
+//			int t = abs(a[i].y - a[j].y);
+//			if (t == k)
+//			{
+//
+//				int temp = abs(a[i].x - a[j].x);
+//				min = min > temp ? temp : min;
+//			}
+//		}
+//	}
+//	printf("%d\n", min);
+//	free(a);
+//	return 0;
+//}
+
+//#include <stdio.h>
+//#include <stdlib.h>
+//#include <string.h>
+//
+//#define MAX_SIZE 100000
+//
+//struct Node {
+//    int x;
+//    int y;
+//    struct Node* next;
+//};
+//
+//struct HashTable {
+//    struct Node* table[MAX_SIZE];
+//};
+//
+//unsigned int hash(int value) {
+//    return value % MAX_SIZE; // 简单的哈希函数
+//}
+//
+//void insert(struct HashTable* ht, int x, int y) {
+//    unsigned int index = hash(x);
+//    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+//    newNode->x = x;
+//    newNode->y = y;
+//    newNode->next = ht->table[index];
+//    ht->table[index] = newNode;
+//}
+//
+//int main() {
+//    int n, k;
+//    scanf("%d %d", &n, &k);
+//
+//    struct HashTable ht = { 0 }; // 初始化哈希表
+//    for (int i = 0; i < n; i++) {
+//        int x;
+//        scanf("%d", &x);
+//        insert(&ht, x, i + 1); // 将x及其索引插入哈希表
+//    }
+//
+//    int min = 1000;
+//
+//     遍历哈希表进行查找
+//    for (int i = 0; i < n; i++) {
+//         假如我们有一个数组存储元素的 x 值 
+//        for (int j = i + 1; j < n; j++) {
+//             查找哈希表中与当前元素 x 的差符合条件的元素
+//            if (abs(j - i) == k) {
+//                int x_i = /* 从数组获取 x 值 */;
+//                int x_j = /* 从数组获取 x 值 */;
+//                int temp = abs(x_i - x_j);
+//                min = min > temp ? temp : min;
+//            }
+//        }
+//    }
+//
+//    printf("%d\n", min);
+//    return 0;
+//}

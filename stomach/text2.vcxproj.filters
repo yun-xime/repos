@@ -24,5 +24,8 @@
     <ClCompile Include="sto2.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="sto1.2.c">
+      <Filter>头文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

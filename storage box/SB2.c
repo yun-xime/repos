@@ -279,7 +279,7 @@
 //{
 //	for (int i = 0; i < N - 1; i++)
 //	{
-//		for (int j = 0; j < N - 1 - i;j++)//j < N - 1 - i作用是让相邻两个数进行比较
+//		for (int j = 0; j < N - 1 - i;j++)
 //		{
 //			int temp;
 //			if (A[j] > A[j + 1])

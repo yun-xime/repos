@@ -129,6 +129,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="sto1.1.c" />
+    <ClCompile Include="sto1.2.c" />
     <ClCompile Include="sto1.c" />
     <ClCompile Include="sto2.c" />
   </ItemGroup>

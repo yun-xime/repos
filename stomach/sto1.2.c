@@ -20,3 +20,27 @@
 //	}
 //	return 0;
 //}
+
+//洛谷P1029 [NOIP2001 普及组] 最大公约数和最小公倍数问题。
+//#include <stdio.h>
+//#include <stdlib.h>
+//#include <math.h>
+//
+//long long gcd(long long x, long long y) {
+//    return y ? gcd(y, x % y) : x;
+//}
+//
+//int main() {
+//    long long x, y, cnt = 0;
+//    scanf("%lld %lld", &x, &y);
+//
+//    for (long long p = x; p <= y; p += x) {
+//        long long q = x * y / p;
+//        if (gcd(p, q) == x && (p * q) / gcd(p, q) == y) {
+//            cnt++;
+//        }
+//    }
+//    printf("%lld\n", cnt);
+//    return 0;
+//}
+

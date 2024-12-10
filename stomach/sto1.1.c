@@ -674,3 +674,23 @@ X.........
 //}
 
 
+//int main() {
+//	int k;
+//	scanf("%d", &k);
+//	int cnt = 0;
+//	for (int i = 22555; i <= 30000; i++) {
+//		int sub1 = i / 100;
+//		int sub2 = (i % 10000) / 10;
+//		int sub3 = i % 1000;
+//		if ( sub1 % k == 0 && sub2 % k == 0 && sub3 % k == 0) {
+//			printf("%d ", i);
+//			cnt = 1;
+//			continue;
+//		}
+//	}
+//	if (cnt == 0) {
+//		printf("No\n");
+//	}
+//	return 0;
+//}
+

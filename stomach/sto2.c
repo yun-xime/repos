@@ -270,3 +270,109 @@
 //    return 0;
 //}
 
+//#include <stdio.h>
+//#include <stdlib.h>
+//int Add(int a, int b) {
+//    return a + b;
+//}
+//
+//int Sub(int a, int b) {
+//    return a - b;
+//}
+//
+//int Mul(int a, int b) {
+//    return a * b;
+//}
+//
+//int Div(int a, int b) {
+//    return a / b;
+//}
+//
+//int main() {
+//    //int (*pf)(int,int) = Add;
+//    //int a = 1, b = 2;
+//    //int ret = pf(a, b);
+//
+//    int (*parr[4])(int, int) = { Add, Sub, Mul, Div };
+//    int intput = 0;
+//    do {
+//        printf("请输入运算符号:(0.退出,1加, 2:减, 3:乘, 4:除):");
+//        scanf("%d", &intput);
+//        if (intput < 0 || intput > 4) {
+//            printf("输入错误，请重新输入！\n");
+//            continue;
+//        }
+//        else if (intput == 0) {
+//            break;
+//        }
+//        else {
+//            int a = 0, b = 0;
+//            printf("请输入两个数:");
+//            scanf("%d %d", &a, &b);
+//            int ret = parr[intput - 1](a, b);
+//            printf("结果为: %d\n", ret);
+//        }
+//    }while (intput != 0);
+//
+//    int (*ppfarr[4])(int, int) = &parr;//指向函数指针数组的指针
+//
+//    return 0;
+//}
+//通过把函数指针封装进数组里，显得简洁且灵活。同时提供跳转功能，所以这种函数指针数组又称转移表
+
+//#include <stdio.h>
+//#include <stdlib.h>
+//int cpm_int(const void* a, const void* b) {
+//	return (*(int*)a - *(int*)b);
+//}
+//int swap(char* a, char* b, int width) {
+//	char temp;
+//	for (int i = 0; i < width; i++) {
+//		temp = *a;
+//		*a = *b;
+//		*b = temp;
+//		a++;
+//		b++;
+//	}
+//	return 0;
+//}
+//void bubbled_sort(void* base, int size, int width, int (*cmp)(const void*, const void*)) {
+//	for (int i = 0; i < size - 1; i++) {
+//		int flag = 0;
+//		for (int j = 0; j < size - i - 1; j++) {
+//			if (cmp((char*)base + j * width, (char*)base + (j + 1) * width) > 0) {
+//				swap((char*)base + j * width, (char*)base + (j + 1) * width, width);
+//				flag = 1;
+//			}
+//		}
+//		if (flag == 0) {
+//			break;
+//		}
+//	}
+//}
+//int main() {
+//	int arr[] = { 1, 1, 2, 1, 5, 9, 2, 6, 5, 3, 5 };
+//	int size = sizeof(arr) / sizeof(arr[0]);
+//	bubbled_sort(arr, size, sizeof(arr[0]), cpm_int);
+//	for (int i = 0; i < size; i++) {
+//		printf("%d ", arr[i]);
+//	}
+//	return 0;
+//}
+
+//sizeof与数组名
+//#include <stdio.h>
+//int main() {
+//	int a[4] = { 1,2,3,4 };
+//	int n1 = sizeof(a);//当数组名直接作为操作数传递给sizeof运算符时，它表示的是整个数组的大小
+//	int n2 = sizeof(a + 0);//当数组名作为表达式出现在需要计算其值的上下文中（例如赋值、函数参数传递、算术运算等），它会被转换为指向其第一个元素的指针。
+//	int n3 = sizeof(*a);//对首元素指针进行解引用，所以这里是单个元素大小
+//	int n4 = sizeof(a + 1);//第二个元素的指针的大小
+//	int n5 = sizeof(a[1]);//第二个元素的大小
+//	int n6 = sizeof(&a);//&a获取的是数组的地址，类型是int (*)[4]，是一种数组指针
+//	int n7 = sizeof(*&a);//&a解引用，所以这里是数组的大小
+//	int n8 = sizeof(&a + 1);//(+1)并不改变指针的类型，因此&a+1仍是int (*)[4]。&a 指向的是一个 int[4] 数组，因此 &a + 1 的步长是 sizeof(int[4])（即 4 * sizeof(int)）。这会让指针移动到 a 的末尾之后的位置（即越过整个数组）。
+//	int n9 = sizeof(&a[0]);//数组第一个元素的地址的大小
+//	int n10 = sizeof(&a[0] + 1);//第二个元素的地址的大小
+//	return 0;
+//}

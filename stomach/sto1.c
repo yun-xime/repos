@@ -75,7 +75,7 @@
 //{
 //	for (int i = 0; i < N - 1; i++)
 //	{
-//		for (int j = 0; j < N - 1 - i;j++)//j < N - 1 - i作用是让相邻两个数进行比较
+//		for (int j = 0; j < N - 1 - i;j++)//j < i的作用是:每轮减少一个需要比较的元素
 //		{
 //			int temp;
 //			if (A[j] > A[j + 1])
@@ -442,51 +442,7 @@
 //    }
 //}
 
-//#include <stdio.h>
-//#include <stdlib.h>
-//#include <string.h>
-//#include <math.h>
-//
-//struct stu {
-//    char name[9];
-//    int chinese, math, english;
-//    int sum;
-//};
-//
-//int cmp(const void* a, const void* b) {
-//    return strcmp(((struct stu*)a)->name, ((struct stu*)b)->name);
-//}
-//
-//int main() {
-//    int N;
-//    scanf("%d", &N);
-//    struct stu* students = (struct stu*)malloc(N * sizeof(struct stu));
-//    if (students == NULL) {
-//        printf("Memory Error!\n");
-//        return 0;
-//    }
-//
-//    for (int i = 0; i < N; i++) {
-//        scanf("%s %d %d %d", students[i].name, &students[i].chinese, &students[i].math, &students[i].english);
-//        students[i].sum = students[i].chinese + students[i].math + students[i].english;
-//    }
-//
-//    qsort(students, N, sizeof(struct stu), cmp);
-//
-//    for (int i = 0; i < N - 1; i++) {
-//        for (int j = i + 1; j < N; j++) {
-//            if (abs(students[i].chinese - students[j].chinese) <= 5 &&
-//                abs(students[i].math - students[j].math) <= 5 &&
-//                abs(students[i].english - students[j].english) <= 5 &&
-//                abs(students[i].sum - students[j].sum) <= 10) {
-//                printf("%s %s\n", students[i].name, students[j].name);
-//            }
-//        }
-//    }
-//
-//    free(students);
-//    return 0;
-//}
+
 //另解:直接生成回文数
 #/*include <stdio.h>
 #include <math.h>
@@ -714,4 +670,67 @@ int main()
 //	return 0;
 //}
 
-
+//对结构体进行排序
+//#include <stdio.h>
+//#include <stdlib.h>
+//#include <string.h>
+//#include <math.h>
+// 
+//typedef struct stu {
+//	char name[10];
+//	int score;
+//}S;
+//
+//int cmp(const void* a, const void* b) {
+//	return ((S*)a)->score - ((S*)b)->score;
+//}
+//
+//int main() {
+//	S s1[3] = { {"Tom", 80}, {"Jerry", 90}, {"Mike", 70} };
+//	qsort(s1, 3, sizeof(S), cmp);
+//	for (int i = 0; i < 3; i++) {
+//		printf("%s:%d\n", s1[i].name, s1[i].score);
+//	}
+//	return 0;
+//}
+//
+//struct stu {
+//    char name[9];
+//    int chinese, math, english;
+//    int sum;
+//};
+//
+//int cmp(const void* a, const void* b) {
+//    return strcmp(((struct stu*)a)->name, ((struct stu*)b)->name);
+//}
+//
+//int main() {
+//    int N;
+//    scanf("%d", &N);
+//    struct stu* students = (struct stu*)malloc(N * sizeof(struct stu));
+//    if (students == NULL) {
+//        printf("Memory Error!\n");
+//        return 0;
+//    }
+//
+//    for (int i = 0; i < N; i++) {
+//        scanf("%s %d %d %d", students[i].name, &students[i].chinese, &students[i].math, &students[i].english);
+//        students[i].sum = students[i].chinese + students[i].math + students[i].english;
+//    }
+//
+//    qsort(students, N, sizeof(struct stu), cmp);
+//
+//    for (int i = 0; i < N - 1; i++) {
+//        for (int j = i + 1; j < N; j++) {
+//            if (abs(students[i].chinese - students[j].chinese) <= 5 &&
+//                abs(students[i].math - students[j].math) <= 5 &&
+//                abs(students[i].english - students[j].english) <= 5 &&
+//                abs(students[i].sum - students[j].sum) <= 10) {
+//                printf("%s %s\n", students[i].name, students[j].name);
+//            }
+//        }
+//    }
+//
+//    free(students);
+//    return 0;
+//}

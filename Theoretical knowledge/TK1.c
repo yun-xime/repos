@@ -17,7 +17,7 @@ offsetof：宏函数，用于确定结构的某个成员到起始位置的偏移
 
 	//计算字数据类型的字节数
 	//printf("%zu\n", sizeof(char)); //printf()函数是一个库函数，用于输出字符串到控制台；库函数的使用必须引入头文件。
-	//printf("%zu\n", sizeof(int));//sizeof()函数用于计算变量或数据类型的字节数,返回值类型为size_t,打印时应该使用%zu。32位系统中size_t是unsigned int,64位系统中size_t是unsigned long long。
+	//printf("%zu\n", sizeof(int));//sizeof()函数用于计算变量或数据类型的字节数（即其操作数在内存中所占的空间大小）,返回值类型为size_t,打印时应该使用%zu。32位系统中size_t是unsigned int,64位系统中size_t是unsigned long long。
 	//printf("%zu\n", sizeof(short));
 	//printf("%zu\n", sizeof(float));
 	//printf("%zu\n", sizeof(double));

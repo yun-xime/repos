@@ -82,3 +82,10 @@ char ch = 65;
 /* void *calloc(n, sizeof(type)) 分配所需的内存空间，并返回一个指向它的指针。malloc 和 calloc 之间的不同点是，malloc 不会设置内存为零，而 calloc 会设置分配的内存为零。
 注意：calloc() 函数将分配的内存全部初始化为零。如果不需要初始化，可以使用 malloc() 函数代替。另外，使用 calloc() 函数时需要注意，如果分配的内存块过大，可能会导致内存不足的问题。*/
 
+//快排：qsort
+//void qsort(void *base, size_t nmemb, size_t size, int (*compar)(const void *, const void *))
+//base: 要排序的数组的起始地址
+//nmemb: 要排序的元素的个数
+//size: 每个元素的大小
+//compar: 用于比较两个元素的函数指针，该函数返回负数表示第一个元素小于第二个元素，0表示两者相等，正数表示第一个元素大于第二个元素。
+//void*:无类型指针，可以转换为任何类型的指针；在解引用前要强制转换为实际类型。
